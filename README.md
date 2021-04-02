@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+`npm install`
+`npm i react-router-dom`
+`npm i react-icons`
+`npm i react-slick`
+`npm i styled-components`
+
+
 ## Available Scripts
 
 In the project directory, you can run:
