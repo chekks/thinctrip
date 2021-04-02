@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//components
+import Header from './component/header/Navbar';
+import Footer from './component/footer/Footer';
+import Routes from './Routes';
+
+export default class App extends Component {
+  render() {
+    let content;
+    var path = window.location.pathname.split('/');
+    console.log("path", path);
+    
+    if(path[1] == 'admin'){
+      content = <Routes/>;
+    }else{
+      content = <div className="wrapper"><Header/><Routes/><Footer/></div>;
+    }
+
+    return (
+      <>
+        {content}
+      </>
+    )
+  }
 }
-
-export default App;

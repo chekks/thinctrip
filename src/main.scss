@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slick-track {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.slick-list {
+    text-align: center;
+}
