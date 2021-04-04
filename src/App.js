@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 //components
 import Header from './component/header/Navbar';
@@ -16,6 +16,7 @@ export default class App extends Component {
 
     if(pathArray[1] == 'login' || pathArray[1] == 'admin'){
       content = <Routes></Routes>
+      require('bootstrap/dist/css/bootstrap.min.css');
     }else{
       if (publicPage == true){
         content = <div className="wrapper"><Header/><Routes/><Footer/></div>;
