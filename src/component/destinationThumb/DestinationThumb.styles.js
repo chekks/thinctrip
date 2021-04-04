@@ -52,7 +52,7 @@ export const CardContent = styled.div`
 `;
 
 export const CardItem = styled.div`
-    width: 285px;
+    width: calc(93% / 6);
     height: 360px;
     margin: 5px;
     position: relative;
@@ -75,11 +75,24 @@ export const CardItem = styled.div`
     }
 
     @media screen and (max-width: 1440px) {
-        width: 230px;
+        
+    }
+
+    @media screen and (max-width: 1250px) {
+        width: calc(90% / 3);
         height: 300px;
+        margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        width: calc(90% / 3);
+        height: 300px;
+        margin-bottom: 20px;
     }
 
     @media screen and (max-width: 768px) {
+        width: calc(90% / 2);
+        height: 300px;
         margin-bottom: 20px;
     }
 `;
