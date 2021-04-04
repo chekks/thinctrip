@@ -7,6 +7,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 `npm i react-icons`
 `npm i react-slick`
 `npm i styled-components`
+`npm i react-bootstrap`
 
 
 ## Available Scripts
