@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 //components
 import Header from './component/header/Navbar';
-import Footer from './component/footer/Footer';
+import Footer from './component/Footer';
 import Routes from './Routes';
 import AdminHomepage from './admin/AdminHomepage';
 
@@ -17,6 +17,8 @@ export default class App extends Component {
     if(pathArray[1] == 'login' || pathArray[1] == 'admin'){
       content = <Routes></Routes>
       require('bootstrap/dist/css/bootstrap.min.css');
+      
+      
     }else{
       if (publicPage == true){
         content = <div className="wrapper"><Header/><Routes/><Footer/></div>;

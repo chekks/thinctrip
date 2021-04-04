@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
-import sb from '../assets/scss/adminSidebar.module.scss'
+import sb from '../assets/scss/admin/adminSidebar.module.scss'
 import AdminBoxIcon from './AdminBoxIcon'
 
 //for deletion

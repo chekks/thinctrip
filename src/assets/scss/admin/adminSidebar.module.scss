@@ -1,10 +1,10 @@
-@import './adminMixins.scss';
 @import './admin.scss';
 
 .sidebar{
     width: 300px;
     background-color: $darkBlue;
     height: 100vh;
+    overflow-y: scroll;
 
     .sidebarContainer{
         position: relative;

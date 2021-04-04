@@ -1,14 +1,4 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Container } from '../../mainStyles'
-import { Link } from 'react-router-dom'
-
-//icons
-import { FaAngleRight } from 'react-icons/fa'
-
-
-export const Navbar = styled.div`
-    background: ${props => props.scrollNav ? 'rgba(0, 0, 0, 0.9)' : 'transparent'};
+.navbar{
     height: 80px;
     display: flex;
     justify-content: center;
@@ -19,37 +9,10 @@ export const Navbar = styled.div`
     top: 0;
     z-index: 999;
     transition: background .5s;
-`;
+}
 
-export const NavbarContainer = styled(Container)`
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    align-items: center;
 
-    ${Container}
-`;
-
-export const NavbarImgLogo = styled.img`
-    width: 150px;
-    height: 50px;
-`;
-
-export const NavbarToggler = styled.div`
-    display: none;
-
-    @media screen and (max-width: 960px) {
-        display: block;
-        position: absolute;
-        top:0;
-        right: 0;
-        transform: translate(-100%, 60%);
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
-`;
-
-export const NavbarMenu = styled.ul`
+.navbarMenu{
     display: flex;
     align-items: center;
     list-style: none;
@@ -62,14 +25,39 @@ export const NavbarMenu = styled.ul`
         height: 90vh;
         position: absolute;
         top: 80px;
-        left: ${props => props.click ? 0 : '-100%'};
         opacity: 1;
         transition: 850ms;
         background: #fff;
     }
-`;
+}
 
-export const NavItem = styled.li`
+.navbarContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+.navbarImgLogo{
+    width: 150px;
+    height: 50px;
+}
+
+.navbarToggler{
+    display: none;
+
+    @media screen and (max-width: 960px) {
+        display: block;
+        position: absolute;
+        top:0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
+
+.navItem{
     height: 80px;
     border-bottom: 2px solid transparent;
 
@@ -84,9 +72,9 @@ export const NavItem = styled.li`
             border: none;
         }
     }
-`;
+}
 
-export const NavItemBtn = styled.li`
+.navItemBtn{
     @media screen and (max-width: 960px) {
         display: flex;
         justify-content: center;
@@ -94,9 +82,9 @@ export const NavItemBtn = styled.li`
         width: 100%;
         height: 120px;
     }
-`;
+}
 
-export const NavLinks = styled(Link)`
+.navLinks{
     color: #fff;
     display: flex;
     align-items: center;
@@ -119,9 +107,9 @@ export const NavLinks = styled(Link)`
             transition: all 0.03s ease;
         }
     }
-`;
+}
 
-export const NavBtnLink = styled(Link)`
+.navBtnLink{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,19 +119,18 @@ export const NavBtnLink = styled(Link)`
     width: 100%;
     border: none;
     outline: none;
-`;
+}
 
-
-export const DropdownMenu = styled.ul`
+.dropdownMenu{
     position: absolute;
     top: 80px;
     list-style: none;
     text-align: start;
     z-index: 99;
     min-width: 220px;
-`;
+}
 
-export const DropdownItem = styled.li`
+.dropdownItem{
     background: #262626;
     cursor: pointer;
     padding: 5px 12px;
@@ -155,16 +142,16 @@ export const DropdownItem = styled.li`
         color: #ffffff;
         background-color: #303030;
     }
-`;
+}
 
-export const DropdownLinks = styled(Link)`
+.dropdownLinks{
     padding: 6px 30px 6px 12px;
     color: #bababa;
     text-decoration: none;
     font-size: 14px;
-`;
+}
 
-export const CaretRight = styled(FaAngleRight)`
+.caretRight{
     color: #bababa;
     font-size: 16px;
-`;
+}

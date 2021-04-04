@@ -1,4 +1,3 @@
-@import './adminMixins.scss';
 @import './admin.scss';
 
 .logo{
@@ -82,11 +81,3 @@
     }
 }
 
-button{
-    font-size: 15px;
-    
-}
-
-button.big{
-    font-size:30px;
-}

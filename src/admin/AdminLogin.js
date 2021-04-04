@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import l from "../assets/scss/adminLogin.module.scss";
+import l from "../assets/scss/admin/adminLogin.module.scss";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 import {FaGoogle,FaFacebookSquare} from "react-icons/fa";
 
@@ -41,7 +41,7 @@ export default class AdminLogin extends Component {
   render() {
     
     return (
-      <div className="flex">
+      <div className="flex adminMainContainer">
         <LeftContainer className={l.leftContainer} src={AdminSidebarBackground}></LeftContainer>
         <div className={l.rightContainer}>
           <img src={AdminLogoDefault} className={l.logo} />
@@ -63,8 +63,8 @@ export default class AdminLogin extends Component {
             <div className={l.or}>OR</div>
           </div>
           <div className={l.socialMediaContainer}>
-            <Button variant="primary" size="lg" block className={l.googleButton}><FaGoogle/>Login with Google</Button>
-            <Button variant="primary" size="lg" block className={l.facebookButton}><FaFacebookSquare/>Login with Facebook</Button>
+            <Button variant="primary" block className={l.googleButton}><FaGoogle/>Login with Google</Button>
+            <Button variant="primary" block className={l.facebookButton}><FaFacebookSquare/>Login with Facebook</Button>
           </div>
           <div className={l.copyright}>Copyright © Thinctrip 2021</div>
         </div>

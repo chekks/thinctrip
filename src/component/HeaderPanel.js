@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import * as s from './LikeBtn.styles'
+import * as s from './headerPanel/headerPanel.styles'
 
-export default class LikeBtn extends Component {
+
+export default class headerPanel extends Component {
     render() {
         return (
             <React.Fragment>
-                <s.LikeBtn></s.LikeBtn>
+
             </React.Fragment>
         )
     }

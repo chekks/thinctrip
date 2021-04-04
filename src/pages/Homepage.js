@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
-import * as s from './Homepage.styles'
-import { Input, Button }from '../../mainStyles'
+import { Link } from 'react-router-dom'
+import { Input, Button }from '../mainStyles'
+import h from "../assets/scss/client/homepage.module.scss";
 
 //components
-import Carousel from '../../component/carousel/Carousel'
-import TourSlider from '../../component/tourSlider/TourSlider'
-import Article from '../../component/articles/Article'
-import DestinationThumb from '../../component/destinationThumb/DestinationThumb'
+import Carousel from '../component/Carousel'
+import TourSlider from '../component/TourSlider'
+import Article from '../component/Article'
+import DestinationThumb from '../component/DestinationThumb'
+import { Container, HeaderTitle } from '../mainStyles'
 
 //icons
 import { FaSearch, FaQuoteLeft } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 
 //image
-import Icon_1 from '../../assets/images/icons/icon_1.png'
-import Icon_2 from '../../assets/images/icons/icon_2.png'
-import Icon_3 from '../../assets/images/icons/icon_3.png'
-import Icon_4 from '../../assets/images/icons/icon_4.png'
-import ExploreImg from '../../assets/images/27.jpg'
+import Icon_1 from '../assets/images/icons/icon_1.png'
+import Icon_2 from '../assets/images/icons/icon_2.png'
+import Icon_3 from '../assets/images/icons/icon_3.png'
+import Icon_4 from '../assets/images/icons/icon_4.png'
+import ExploreImg from '../assets/images/27.jpg'
 
 
 export default class homepage extends Component {
@@ -177,83 +179,83 @@ export default class homepage extends Component {
 
         return (
             <React.Fragment>
-              <s.CarouselSec>
+              <div className={h.carouselSec}>
                 <Carousel data={slidesData}/>
-                  <s.CarouselContent>
-                      <s.ContentContainer>
+                  <div className={h.carouselContent}>
+                      <div className={h.contentContainer}>
                           <h1>Philippines</h1>
                           <h3>7000 Islands. 7000 ways to explore</h3>
                           <p>Create your ideal holiday with the local tour providers</p>
 
-                          <s.FormContainer>
+                          <div className={h.formContainer}>
                             <Input placeholder="Search from over 7000 Islands"></Input>
                             <Button><FaSearch/></Button>
-                          </s.FormContainer>
+                          </div>
 
-                      </s.ContentContainer>
-                  </s.CarouselContent>
-              </s.CarouselSec>
+                      </div>
+                  </div>
+              </div>
 
-              <s.SectionWrapper>
+              <Container className={h.sectionWrapper}>
                   {coreData.map((item, index) =>
-                    <s.CoreContainer key={index}>
-                      <s.CoreImg src={item.icon}></s.CoreImg>
+                    <div classname={h.coreContainer} key={index}>
+                      <img className={h.coreImg} src={item.icon} />
 
-                      <s.CoreDetails>
+                      <div className={h.coreDetails}>
                         <h3>{item.title}</h3>
                         <p>{item.caption}</p>
-                      </s.CoreDetails>
-                    </s.CoreContainer>
+                      </div>
+                    </div>
                   )}
-              </s.SectionWrapper>
+              </Container>
 
-              <s.SectionWrapper>
-                  <s.ExploreContainer>
-                    <s.ExploreImgContainer>
-                        <s.ExploreImg src={ExploreImg}></s.ExploreImg>
-                    </s.ExploreImgContainer>
+              <Container className={h.sectionWrapper}>
+                  <div className={h.exploreContainer}>
+                    <div className={h.exploreImgContainer}>
+                        <img className={h.exploreImg} src={ExploreImg} />
+                    </div>
                       
-                    <s.ExploreVid width="750" height="350" src="https://www.youtube.com/embed/YwYg6RVzlGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></s.ExploreVid>
-                  </s.ExploreContainer>
-              </s.SectionWrapper>
+                    <iframe width="750" height="350" src="https://www.youtube.com/embed/YwYg6RVzlGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen className={h.exploreVid}></iframe>
+                  </div>
+              </Container>
 
-              <s.TourPackages>
-                    <s.Header>
-                        <s.HeaderTitle>Popular Tour Packages</s.HeaderTitle>
-                        <s.HeaderSubtitle>/ View All Tours</s.HeaderSubtitle>
-                    </s.Header>
-                    <TourSlider data={thumbData}/>
-              </s.TourPackages>
+              <div className={h.tourPackages}>
+                <div className={h.header}>
+                    <HeaderTitle className={h.headerTitle}>Popular Tour Packages</HeaderTitle>
+                    <Link className={h.headerSubtitle}>/ View All Tours</Link>
+                </div>
+                <TourSlider data={thumbData}/>
+              </div>
 
-              <s.TravelDestinations>
-                    <s.Header>
-                        <s.HeaderTitle colorDark>Bucket List Destinations</s.HeaderTitle>
-                        <s.HeaderSubtitle>/ View All Destinations</s.HeaderSubtitle>
-                    </s.Header>
-                    <DestinationThumb data={destinationData}/>
-              </s.TravelDestinations>
+              <div className={h.travelDestinations}>
+                <div className={h.header}>
+                    <HeaderTitle className={h.headerTitle} colorDark>Bucket List Destinations</HeaderTitle>
+                    <Link className={h.headerSubtitle}>/ View All Destinations</Link>
+                </div>
+                <DestinationThumb data={destinationData}/>
+              </div>
 
-              <s.TravelArticles>
-                    <s.Header>
-                        <s.HeaderTitle colorDark>Travel Articles</s.HeaderTitle>
-                        <s.HeaderSubtitle>/ Read All Articles</s.HeaderSubtitle>
-                    </s.Header>
+              <Container>
+                    <div className={h.header}>
+                        <HeaderTitle colorDark>Travel Articles</HeaderTitle>
+                        <Link className={h.headerSubtitle}>/ Read All Articles</Link>
+                    </div>
 
                     <Article data={articleData}/>
-              </s.TravelArticles>
+              </Container>
 
-              <s.NewsletterContainer>
-                    <s.NewsletterContent>
-                        <s.NewsletterDescription>
+              <div className={h.newsletterContainer}>
+                    <Container className={h.newsletterContent}>
+                        <div className={h.newsletterDescription}>
                             <h1><FaQuoteLeft/>Subscribe to get latest offers and deals today</h1>
                             <p>Be in the loop with all of the latest tips, promos and updates on our tours by subscribing to our newsletter or visiting our social media pages.</p>
-                        </s.NewsletterDescription>
-                        <s.FormContainer>
+                        </div>
+                        <div className={h.formContainer}>
                             <Input big placeholder="Your Email Address"></Input>
                             <Button><BiMailSend/></Button>
-                          </s.FormContainer>
-                    </s.NewsletterContent>
-              </s.NewsletterContainer>
+                          </div>
+                    </Container>
+              </div>
             </React.Fragment>
         )
     }

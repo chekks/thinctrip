@@ -1,21 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Container } from '../../mainStyles'
-import { Link } from 'react-router-dom'
-
-export const CardContainer = styled.div`
+.cardContainer{
     display: flex;
     margin-bottom: 100px;
     position: relative;
     overflow: hidden;
 
-    @media screen and (max-width: 768px) {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-`;
+}
 
-export const CardItem = styled.div`
+
+.cardItem{
     width: 220px;
     height: 270px;
     margin: 0 10px;
@@ -41,35 +33,32 @@ export const CardItem = styled.div`
         transition: all 0.5s ease;
     }
 
-    @media screen and (max-width: 768px) {
-        margin-bottom: 20px;
-    }
-`;
 
-export const CardImg = styled.div`
+}
+
+.cardImg{
     width: 100%;
     height: 100%;
-    background-image: url(${props => props.src});
     border-radius: 6px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
     overflow: hidden;
-`;
+}
 
-export const CardContent = styled.div`
+.cardContent{
     position: absolute;
     bottom: 0;
     z-index: 5;
     padding: 16px;
-`;
+}
 
-export const CardTitle = styled.h1`
+.cardTitle{
     color: #fff;
     font-size: 14px;
-`;
+}
 
-export const CardInfo = styled.p`
+.cardInfo{
     color: #2cb8af;
     display: flex;
     align-items: center;
@@ -82,4 +71,16 @@ export const CardInfo = styled.p`
     z-index: 1;
     font-weight: 600;
     padding-bottom: 3px;
-`;
+}
+
+
+@media screen and (max-width: 768px) {
+   .cardContainer{
+        flex-wrap: wrap;
+        justify-content: center;
+   }
+
+   .cardItem{
+        margin-bottom: 20px;
+   }
+}

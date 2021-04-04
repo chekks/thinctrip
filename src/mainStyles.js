@@ -47,3 +47,22 @@ export const Input = styled.input`
         color: rgb(212, 212, 212);
     }
 `;
+
+export const CardImg = styled.div`
+    background-image: url(${props => props.src});
+`;
+
+export const Navbar = styled.div`
+    background: ${props => props.scrollNav ? 'rgba(0, 0, 0, 0.9)' : 'transparent'};
+`;
+
+export const NavbarMenu = styled.ul`
+    @media screen and (max-width: 960px) {
+        left: ${props => props.click ? 0 : '-100%'};
+    }
+`;
+
+export const HeaderTitle = styled.h1`
+    color: ${props => props.colorDark ? '#000' : '#fff'};
+`;
+

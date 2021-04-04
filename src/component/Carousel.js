@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slider from "react-slick"
-import * as s from './Carousel.styles'
+import s from "../assets/scss/client/carousel.module.scss";
+
 
 export default class carousel extends Component {
     state = {
@@ -21,8 +22,9 @@ export default class carousel extends Component {
         return (
             <div>
                 <Slider {...settings}>
+                   
                     {this.state.slidesData.map((slide) =>
-                        <s.SliderImg src="https://staging.thinctrip.com/wp-content/uploads/2020/04/Palawan-Main-2.jpg"></s.SliderImg>
+                        <img className={s.img} src="https://staging.thinctrip.com/wp-content/uploads/2020/04/Palawan-Main-2.jpg" />  
                     )}
                 </Slider>
             </div>

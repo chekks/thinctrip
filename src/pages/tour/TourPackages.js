@@ -10,7 +10,7 @@ import { FaSearch, FaCalendarCheck } from 'react-icons/fa'
 import { BsPersonFill } from 'react-icons/bs'
 
 //components
-import Rate from '../../component/reviews/Rate'
+import Rate from '../../component/Rate'
 
 export default class TourPackages extends Component {
     render() {

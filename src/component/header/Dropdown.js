@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import * as s from './Header.styles'
+import h from "../../assets/scss/client/header.module.scss";
+import { FaAngleRight } from 'react-icons/fa'
 
 //components
 import { NavbarItems } from './MenuItems'
@@ -20,16 +21,16 @@ export default class Dropdown extends Component {
     render() {
         return (
             <React.Fragment>
-                <s.DropdownMenu onClick={this.handleClick}>
+                <ul className={h.dropdownMenu} onClick={this.handleClick}>
                             
                     {NavbarItems.map((item, index) =>
-                        <s.DropdownItem key={index}>
-                            <s.DropdownLinks to={item.to}>{item.name}</s.DropdownLinks>
-                            <s.CaretRight></s.CaretRight>
-                        </s.DropdownItem>
+                        <li className={h.dropdownItem} key={index}>
+                            <Link className={h.dropdownLinks} to={item.to}>{item.name}</Link>
+                            <FaAngleRight className={h.caretRight}/>
+                        </li>
                     )}
 
-                </s.DropdownMenu>
+                </ul>
             </React.Fragment>
         )
     }

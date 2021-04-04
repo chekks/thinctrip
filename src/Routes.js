@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 //pages
-import Homepage from './pages/homepage/Homepage'
+import Homepage from './pages/Homepage'
 import TourPackages from './pages/tour/TourPackages';
 
 import AdminHomepage from './admin/AdminHomepage'

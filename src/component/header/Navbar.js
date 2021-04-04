@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { IconContext } from 'react-icons/lib'
-import * as s from './Header.styles'
+import h from "../../assets/scss/client/header.module.scss";
 
 //image
 import LogoWhite from '../../assets/images/logo-white.png'
@@ -12,6 +12,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 //components
 import { NavbarItems } from './MenuItems'
 import Dropdown from './Dropdown'
+import { Container, Navbar, NavbarMenu } from '../../mainStyles'
 
 export default class Header extends Component {
 
@@ -72,39 +73,38 @@ export default class Header extends Component {
     render() {
         return (
             <React.Fragment>
-                <s.Navbar scrollNav={this.state.scrollNav}>
-                    <s.NavbarContainer>
-                        <s.NavbarImgLogo src={LogoWhite}></s.NavbarImgLogo>
-
+                <Navbar className={h.navbar} scrollNav={this.state.scrollNav}>
+                    <Container className={h.navbarContainer}>
+                        <img src={LogoWhite} className={h.navbarImgLogo} />
                         <IconContext.Provider value={{color: '#fff'}}>
-                            <s.NavbarToggler onClick={this.handleClick}>
+                            <div className={h.navbarToggler} onClick={this.handleClick}>
                                 {this.state.clicked ? <FaTimes /> : <FaBars />}
-                            </s.NavbarToggler>
+                            </div>
                         </IconContext.Provider>
                     
-                        <s.NavbarMenu onClick={this.handleClick} click={this.state.clicked}>
+                        <NavbarMenu className={h.navbarMenu} onClick={this.handleClick} click={this.state.clicked}>
 
-                            <s.NavItem>
-                                <s.NavLinks to="/" onClick={this.closeMobileMenu}>About Us</s.NavLinks>
-                            </s.NavItem>
-                            <s.NavItem>
-                                <s.NavLinks to="/" onClick={this.closeMobileMenu}>How it Works</s.NavLinks>
-                            </s.NavItem>
-                            <s.NavItem onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-                                <s.NavLinks to="/" onClick={this.closeMobileMenu}>Plan Your Trip</s.NavLinks>
+                            <li className={h.navItem}>
+                                <Link className={h.navLinks} to="/" onClick={this.closeMobileMenu}>About Us</Link>
+                            </li>
+                            <li className={h.navItem}>
+                                <Link className={h.navLinks} to="/" onClick={this.closeMobileMenu}>How it Works</Link>
+                            </li>
+                            <li className={h.navItem} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
+                                <Link className={h.navLinks} to="/" onClick={this.closeMobileMenu}>Plan Your Trip</Link>
                                 {this.state.dropdown && <Dropdown />}
-                            </s.NavItem>
-                            <s.NavItem>
-                                <s.NavLinks to="/tour" onClick={this.closeMobileMenu}>Tour</s.NavLinks>
-                            </s.NavItem>
-                            <s.NavItem>
-                                <s.NavLinks to="/" onClick={this.closeMobileMenu}>Make a Payment</s.NavLinks>
-                            </s.NavItem>
+                            </li>
+                            <li className={h.navItem}>
+                                <Link className={h.navLinks} to="/tour" onClick={this.closeMobileMenu}>Tour</Link>
+                            </li>
+                            <li className={h.navItem}>
+                                <Link className={h.navLinks} to="/" onClick={this.closeMobileMenu}>Make a Payment</Link>
+                            </li>
 
-                        </s.NavbarMenu>
+                        </NavbarMenu>
                     
-                    </s.NavbarContainer>
-                </s.Navbar>
+                    </Container>
+                </Navbar>
             </React.Fragment>
         )
     }

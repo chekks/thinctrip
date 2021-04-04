@@ -1,31 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Container } from '../../mainStyles'
-import { Link } from 'react-router-dom'
 
-//icons
-import { AiFillStar } from 'react-icons/ai'
+@import '../config.scss';
 
-export const RateContainer = styled.div`
+.rateContainer{
     display: flex;
     align-items: center;
     justify-content: center;
-`;
+}
 
-export const RateIcon = styled(AiFillStar)`
-    color: #ffa127;
-`;
+.rateIcon{
+    color: $orange;
+}
 
-export const RateNumber = styled.span`
+.rateNumber{
     margin: 0 2px;
     font-weight: 700;
     font-size: 12px;
     line-height: 16px;
-    color: #ffa127;
+    color: $orange;
     align-self: center;
-`;
+}
 
-export const RateParticipation = styled.span`
+.rateParticipation{
     font-size: 12px;
     line-height: 16px;
     align-self: center;
@@ -39,4 +34,4 @@ export const RateParticipation = styled.span`
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     font-weight: 100;
-`;
+}
