@@ -74,6 +74,11 @@ export const CardItem = styled.div`
         }
     }
 
+    @media screen and (max-width: 1440px) {
+        width: 230px;
+        height: 300px;
+    }
+
     @media screen and (max-width: 768px) {
         margin-bottom: 20px;
     }

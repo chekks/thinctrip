@@ -19,7 +19,7 @@ export default class Dropdown extends Component {
 
     render() {
         return (
-            <>
+            <React.Fragment>
                 <s.DropdownMenu onClick={this.handleClick}>
                             
                     {NavbarItems.map((item, index) =>
@@ -30,7 +30,7 @@ export default class Dropdown extends Component {
                     )}
 
                 </s.DropdownMenu>
-            </>
+            </React.Fragment>
         )
     }
 }

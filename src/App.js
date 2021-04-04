@@ -18,9 +18,9 @@ export default class App extends Component {
     }
 
     return (
-      <>
+      <React.Fragment>
         {content}
-      </>
+      </React.Fragment>
     )
   }
 }

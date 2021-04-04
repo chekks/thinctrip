@@ -320,10 +320,10 @@ export const NewsletterDescription = styled.div`
         }
     }
 
-    p{
-        color: #bebebe;
+    p {
+        color: #fff;
         font-weight: 100;
-        font-size: 16px;
+        font-size: 15px;
 
         @media screen and (max-width: 768px){
             font-size: 12px;

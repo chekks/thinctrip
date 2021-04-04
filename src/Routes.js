@@ -9,7 +9,7 @@ import TourPackages from './pages/tour/TourPackages';
 export default class Routes extends Component {
     render() {
         return (
-            <>
+            <React.Fragment>
             <Switch>
                 <Route exact path="/" component={Homepage}/>
                 <Route exact path="/tour" component={TourPackages}/>
@@ -17,7 +17,7 @@ export default class Routes extends Component {
                 {/* <Route component={NotFound}/> */}
                 
             </Switch>
-            </>
+            </React.Fragment>
         )
     }
 }

@@ -176,7 +176,7 @@ export default class homepage extends Component {
 
 
         return (
-            <>
+            <React.Fragment>
               <s.CarouselSec>
                 <Carousel data={slidesData}/>
                   <s.CarouselContent>
@@ -254,7 +254,7 @@ export default class homepage extends Component {
                           </s.FormContainer>
                     </s.NewsletterContent>
               </s.NewsletterContainer>
-            </>
+            </React.Fragment>
         )
     }
 }

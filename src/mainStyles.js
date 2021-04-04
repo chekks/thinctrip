@@ -34,13 +34,13 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
-    max-width: 300px;
+    min-width: 300px;
     height: 50px;
     border-radius: 5px 0 0 5px;
     outline: none;
     border: none;
     padding: 10px 20px;
-    width: ${props => props.big ? '350px' : '100%'};
+    width: ${props => props.big ? '100%' : '480px'};
 
     ::placeholder,
     ::-webkit-input-placeholder {

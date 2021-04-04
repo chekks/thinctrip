@@ -71,7 +71,7 @@ export default class Header extends Component {
 
     render() {
         return (
-            <>
+            <React.Fragment>
                 <s.Navbar scrollNav={this.state.scrollNav}>
                     <s.NavbarContainer>
                         <s.NavbarImgLogo src={LogoWhite}></s.NavbarImgLogo>
@@ -105,7 +105,7 @@ export default class Header extends Component {
                     
                     </s.NavbarContainer>
                 </s.Navbar>
-            </>
+            </React.Fragment>
         )
     }
 }

@@ -8,7 +8,7 @@ export default class destinationThumb extends Component {
     
     render() {
         return (
-            <>
+            <React.Fragment>
                 <s.CardContainer>
 
                     {this.state.destinationData.map((item, index) =>
@@ -29,7 +29,7 @@ export default class destinationThumb extends Component {
                     )}
 
                 </s.CardContainer>
-            </>
+            </React.Fragment>
         )
     }
 }

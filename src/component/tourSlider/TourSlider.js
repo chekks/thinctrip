@@ -59,7 +59,7 @@ export default class TourSlider extends Component {
         };
 
         return (
-            <>
+            <React.Fragment>
                 <Container>
                     <Slider {...settings}>
                         {this.state.thumbData.map((item, index) => 
@@ -96,7 +96,7 @@ export default class TourSlider extends Component {
                         )}
                     </Slider>
                 </Container>
-            </>
+            </React.Fragment>
         )
     }
 }

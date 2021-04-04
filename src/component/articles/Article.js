@@ -9,7 +9,7 @@ export default class Article extends Component {
 
     render() {
         return (
-            <>
+            <React.Fragment>
                 <s.CardContainer>
 
                     {this.state.articleData.map((item, index) =>
@@ -24,7 +24,7 @@ export default class Article extends Component {
                     )}
 
                 </s.CardContainer>
-            </>
+            </React.Fragment>
         )
     }
 }
