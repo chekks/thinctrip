@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
-import sb from '../assets/scss/admin/adminSidebar.module.scss'
+import sb from '../../assets/scss/admin/adminSidebar.module.scss'
 import AdminBoxIcon from './AdminBoxIcon'
 
 //for deletion
-import LogoWhite from '../assets/images/logo-white.png'
-import AdminSidebarBackground from '../assets/images/admin_sidebar_logo.jfif'
+import LogoWhite from '../../assets/images/logo-white.png'
+import AdminSidebarBackground from '../../assets/images/admin_sidebar_logo.jfif'
 
 
 export const SidebarContainer = styled.div`
@@ -143,7 +143,7 @@ export default class AdminSidebar extends Component {
         {
           icon: "FaNewspaper",
           label: "Articles",
-          link: "/",
+          link: "/admin/articles",
           hasSubMenu: false,
           subMenu : []
         },

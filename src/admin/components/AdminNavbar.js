@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import nv from '../assets/scss/admin/adminNavbar.module.scss'
+import nv from '../../assets/scss/admin/adminNavbar.module.scss'
 import { BiMenu } from "react-icons/bi";
 import { BiMessageRounded } from "react-icons/bi";
 import { BiChevronDown } from "react-icons/bi";
 
 //FOR DELETION
-import AdminNavLogo from '../assets/images/admin_nav_logo.JPG'
+import AdminNavLogo from '../../assets/images/admin_nav_logo.JPG'
 
 export const ImgContainer = styled.div`
     background-image: url(${props => props.src});

@@ -5,8 +5,9 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Homepage from './pages/Homepage'
 import TourPackages from './pages/tour/TourPackages';
 
-import AdminHomepage from './admin/AdminHomepage'
+import AdminHomepage from './admin/components/AdminHomepage'
 import AdminLogin from './admin/AdminLogin'
+import AdminArticles from './admin/AdminArticles';
 
 export default class Routes extends Component {
     render() {
@@ -18,8 +19,9 @@ export default class Routes extends Component {
                 
 
                 {/* ADMIN ROUTES */}
-                <Route exact path="/admin" component={AdminHomepage}/>
+                {/* <Route exact path="/admin" component={AdminHomepage}/> */}
                 <Route exact path="/login" component={AdminLogin}/>
+                <Route exact path="/admin/articles" component={AdminArticles}/>
                 {/* <Route component={NotFound}/> */}
                 
             </Switch>

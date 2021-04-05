@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Header from './component/header/Navbar';
 import Footer from './component/Footer';
 import Routes from './Routes';
-import AdminHomepage from './admin/AdminHomepage';
+import AdminHomepage from './admin/components/AdminHomepage';
 
 
 export default class App extends Component {
@@ -14,15 +14,18 @@ export default class App extends Component {
     var pathArray = window.location.pathname.split('/');
     let publicPage = true;
 
-    if(pathArray[1] == 'login' || pathArray[1] == 'admin'){
+    if(pathArray[1] == 'admin'){
+      publicPage = false;
+    }
+
+    if(pathArray[1] == 'login'){
       content = <Routes></Routes>
-      require('bootstrap/dist/css/bootstrap.min.css');
-      
-      
+      require('bootstrap/dist/css/bootstrap.min.css'); 
     }else{
       if (publicPage == true){
         content = <div className="wrapper"><Header/><Routes/><Footer/></div>;
       }else{
+        require('bootstrap/dist/css/bootstrap.min.css'); 
         content = <AdminHomepage/>
       }
 

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import AdminSidebar  from './AdminSidebar'
 import AdminNavbar  from './AdminNavbar'
-import '../assets/scss/config.scss'
-import '../assets/scss/functions.scss'
-import '../assets/scss/admin/admin.scss'
+import Routes from '../../Routes';
+import '../../assets/scss/config.scss'
+import '../../assets/scss/functions.scss'
+import '../../assets/scss/admin/admin.scss'
 
 export default class AdminHomepage extends Component {
   render() {
@@ -12,6 +13,9 @@ export default class AdminHomepage extends Component {
         <AdminSidebar />
         <div className="width100">
           <AdminNavbar />
+          <div className="adminMainInnerContainer">
+            <Routes></Routes>
+          </div>
         </div>
       </div>
     )
