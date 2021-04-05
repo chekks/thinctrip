@@ -96,14 +96,14 @@ export default class AdminSidebar extends Component {
         },
         {
           icon: "FaMapMarkedAlt",
-          label: "Tour Package",
+          label: "Itineraries",
           link: "/",
           hasSubMenu: false,
           subMenu : []
         },
         {
           icon: "FaPlane",
-          label: "Bookings",
+          label: "Trips",
           link: "/",
           hasSubMenu: false,
           subMenu : []
@@ -155,6 +155,20 @@ export default class AdminSidebar extends Component {
           subMenu : []
         },
         {
+          icon: "FaMapMarkerAlt",
+          label: "Destination",
+          link: "/",
+          hasSubMenu: false,
+          subMenu : []
+        },
+        {
+          icon: "FaBookOpen",
+          label: "Bookings",
+          link: "/",
+          hasSubMenu: false,
+          subMenu : []
+        },
+        {
           icon: "FaMapMarkedAlt",
           label: "Tour",
           link: "/",
@@ -198,13 +212,6 @@ export default class AdminSidebar extends Component {
           subMenu : []
         },
         {
-          icon: "FaBookOpen",
-          label: "Bookings",
-          link: "/",
-          hasSubMenu: false,
-          subMenu : []
-        },
-        {
           icon: "FaUserAlt",
           label: "Users",
           link: "/",
@@ -226,13 +233,6 @@ export default class AdminSidebar extends Component {
           subMenu : []
         },
         {
-          icon: "FaMapMarkerAlt",
-          label: "Destination",
-          link: "/",
-          hasSubMenu: false,
-          subMenu : []
-        },
-        {
           icon: "FaMoneyBill",
           label: "Settings",
           link: "/",
@@ -248,7 +248,9 @@ export default class AdminSidebar extends Component {
   
 
   render() {
-    const menuBar = this.state[this.state.user_type].menuBar;
+    //const menuBar = this.state[this.state.user_type].menuBar;
+    let userType = sessionStorage.getItem('userType');
+    const menuBar =  userType != undefined ? this.state[userType].menuBar : this.state[this.state.user_type].menuBar;
     return (
       <div className={sb.sidebar} src={AdminSidebarBackground}>
         <div className={sb.sidebarContainer}>

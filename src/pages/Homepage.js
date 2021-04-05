@@ -198,7 +198,7 @@ export default class homepage extends Component {
 
               <Container className={h.sectionWrapper}>
                   {coreData.map((item, index) =>
-                    <div classname={h.coreContainer} key={index}>
+                    <div className={h.coreContainer} key={index}>
                       <img className={h.coreImg} src={item.icon} />
 
                       <div className={h.coreDetails}>
