@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Table } from "react-bootstrap";
+import styled from 'styled-components'
 import moment from 'moment';
 import {FaEdit, FaTrashAlt, FaNewspaper} from "react-icons/fa";
 
@@ -7,7 +8,7 @@ export default class AdminArticles extends Component {
     render() {
         return (
             <div>
-                <div className="adminHeaderContent"><FaNewspaper /> Articles</div>
+                <div className="adminHeaderContent"><FaNewspaper /> Articles <button className="btnAdd">Add New</button></div>
                 
                 <Table striped hover className="adminTable">
                     <thead>

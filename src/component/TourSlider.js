@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import t from "../assets/scss/client/tourSlider.module.scss";
 
 //components
-import Rate from './Rate'
+import Rate from '../component/reviews/Rate'
 import LikeBtn from './LikeBtn'
 
 
@@ -75,7 +75,7 @@ export default class TourSlider extends Component {
                                         <div className={t.cardSubTitle}>15 Days • Blue Horizon</div>
                                         <div className={t.cardTitle}>{item.tour}</div>
                                         <div className={t.cardReview}>
-                                          <Rate/>
+                                          <Rate type="singleRate"/>
                                         </div>
                                       </div>
 

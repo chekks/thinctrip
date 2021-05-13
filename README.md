@@ -9,7 +9,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 `npm i styled-components`
 `npm i react-bootstrap`
 `npm i moment`
-
+`npm i react-redux`
+`npm i redux-thunk`
+`npm i redux-devtools-extension`
+`npm i --save google-maps-react`
+`npm i slick-carousel`
 
 ## Available Scripts
 

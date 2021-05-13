@@ -1,0 +1,23 @@
+.pageContainer{
+    max-width: 1180px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: 50vh;
+}
+
+.priceContainer {
+    z-index: 8;
+    position: relative;
+}
+
+.priceRibbon{
+    background: #24073d;
+    height: 35px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link, useLocation, withRouter } from "react-router-dom";
 
 //components
 import Header from './component/header/Navbar';
@@ -8,7 +8,15 @@ import Routes from './Routes';
 import AdminHomepage from './admin/components/AdminHomepage';
 
 
-export default class App extends Component {
+class App extends Component {
+  
+  componentDidUpdate = (prevProps) =>{
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+   }
+  }
+
   render() {
     let content;
     var pathArray = window.location.pathname.split('/');
@@ -30,8 +38,6 @@ export default class App extends Component {
       }
 
     }
-    
-
 
     return (
       <React.Fragment>
@@ -40,3 +46,5 @@ export default class App extends Component {
     )
   }
 }
+
+export default withRouter(props => <App {...props} />);

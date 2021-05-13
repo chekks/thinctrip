@@ -1,113 +1,104 @@
 import React, { Component } from 'react'
-import * as s from './Tour.styles'
-import { Input, Button }from '../../mainStyles'
+import { Link } from 'react-router-dom'
+import { Input, Button, CardImg, HeaderTitle, Container } from '../../mainStyles'
+import t from "../../assets/scss/client/tour.module.scss"
+import h from "../../assets/scss/client/homepage.module.scss"
 
 //image
 import BgVideo from '../../assets/images/BgVideo.mp4'
 
 //icons
-import { FaSearch, FaCalendarCheck } from 'react-icons/fa'
+import { FaSearch, FaCheck, FaRegCalendarCheck } from 'react-icons/fa'
 import { BsPersonFill } from 'react-icons/bs'
 
 //components
-import Rate from '../../component/Rate'
+import Rate from '../../component/reviews/Rate'
+import Currency from '../../component/Currency'
+import TourSlider from '../../component/TourSlider'
+import Article from '../../component/Article'
+import { 
+    tourData, 
+    thumbData,
+    articleData 
+} from '../../component/Data'
 
-export default class TourPackages extends Component {
-    render() {
+const TourPackages = (props) => {
+    return (
+        <React.Fragment>
+            <div className={t.bannerContainer}>
+                <video autoPlay loop muted>
+                    <source src={BgVideo} type='video/mp4' />
+                </video>
 
-        const tourData = [
-            {
-              id: 1,
-              img: 'https://staging.thinctrip.com/wp-content/uploads/2019/07/Cebu-Main-800x960-1.jpg',
-              package: 'NORTH TO SOUTH — 15D & 14N',
-              duration: '15 Days',
-              availability: 'Blue Horizon',
-              price: '568',
-              link: '/tour/north-to-south-15d-14n',
-            }, {
-              id: 2,
-              img: 'https://staging.thinctrip.com/wp-content/uploads/2019/07/Boracay-Main-800x960-1.jpg',
-              package: 'NORTH TO SOUTH — 15D & 14N',
-              duration: '15 Days',
-              availability: 'Blue Horizon',
-              price: '568',
-              link: '/tour/north-to-south-15d-14n',
-            }, {
-              id: 3,
-              img: 'https://staging.thinctrip.com/wp-content/uploads/2019/07/Bohol-Main-800x960-1.jpg',
-              package: 'NORTH TO SOUTH — 15D & 14N',
-              duration: '15 Days',
-              availability: 'Blue Horizon',
-              price: '568',
-              link: '/tour/north-to-south-15d-14n/',
-            }, {
-              id: 4,
-              img: 'https://staging.thinctrip.com/wp-content/uploads/2019/07/Bicol-Main-800x960-1.jpg',
-              package: 'NORTH TO SOUTH — 15D & 14N',
-              duration: '15 Days',
-              availability: 'Blue Horizon',
-              price: '568',
-              link: '/tour/north-to-south-15d-14n/',
-            }, {
-              id: 5,
-              img: 'https://staging.thinctrip.com/wp-content/uploads/2019/07/Baguio-Main-800x960-1.jpg',
-              package: 'NORTH TO SOUTH — 15D & 14N',
-              duration: '15 Days',
-              availability: 'Blue Horizon',
-              price: '568',
-              link: '/tour/north-to-south-15d-14n/',
-            },
-        ];
+                <div className={t.bannerContent}>
+                    <h1>Tour Packages</h1>
+                    <p>Travel far enough, you meet yourself.</p>
 
-        return (
-            <React.Fragment>
-                <s.TourContainer>
-                    <s.TourBanner>
-                        <video autoPlay loop muted>
-                            <source src={BgVideo} type='video/mp4' />
-                        </video>
+                    <div className={t.formContainer}>
+                        <Input placeholder="Search from over 7000 Islands"></Input>
+                        <Button radRight><FaSearch/></Button>
+                    </div>
+                </div>
+            </div>
 
-                        <s.TourContent>
-                            <h1>Tour Packages</h1>
-                            <p>Travel far enough, you meet yourself.</p>
+            <div className={t.wrapper}>
+                <div className={t.cardContainer}>
+                    {tourData.map((item, index) =>
+                        <div className={t.cardItem}>
+                            <CardImg src={item.img} className={t.cardImg}></CardImg>
 
-                            <s.FormContainer>
-                                <Input placeholder="Search from over 7000 Islands"></Input>
-                                <Button><FaSearch/></Button>
-                            </s.FormContainer>
-                        </s.TourContent>
-                    </s.TourBanner>
+                            <div className={t.cardContent}>
+                                <div className={t.itemLeft}>
+                                    <h1 className={t.itemTitle}>{item.package}</h1>
 
-                    <s.TourWrapper>
-                        <s.CardContainer>
-                            {tourData.map((item, index) =>
-                                <s.CardItem key={index}>
-                                    <s.CardImg src={item.img}></s.CardImg>
+                                    <div className={t.itemReview}><Rate type="singleRate"/></div>
 
-                                    <s.CardContent>
-                                        <s.ItemLeft>
-                                            <s.ItemTitle>{item.package}</s.ItemTitle>
-                                            <s.ItemDetails><FaCalendarCheck/>{item.duration} • <BsPersonFill/>{item.availability}</s.ItemDetails>
-                                            <s.ItemReview>
-                                                <Rate/>
-                                            </s.ItemReview>
-                                        </s.ItemLeft>
+                                    <ul className={t.tourActivities}>
+                                        <li><FaCheck/>Air Whale Watching in Kaikoura</li>
+                                        <li><FaCheck/>Exciting Kaikoura Whale Watching Tour</li>
+                                        <li><FaCheck/>Serene break while river rafting on Waiau River Canyon exposed to scenic views</li>
+                                    </ul>
+                                </div>
 
-                                        <s.ItemRight>
-                                            <s.ItemTitle>Inclusions</s.ItemTitle>
-                                            <s.ItemDetails><FaCalendarCheck/>{item.duration} • {item.availability}</s.ItemDetails>
-                                            <s.ItemReview>
-                                                <Rate/>
-                                            </s.ItemReview>
-                                            <Button>View Details</Button>
-                                        </s.ItemRight>
-                                    </s.CardContent>
-                                </s.CardItem>
-                            )}
-                        </s.CardContainer>
-                    </s.TourWrapper>
-                </s.TourContainer>
-            </React.Fragment>
-        )
-    }
+                                <div className={t.itemRight}>
+                                    <div className={t.tourPrice}>
+                                        <span>From</span>
+                                        <h1><Currency data="$"/>{item.price}</h1>
+                                    </div>
+
+                                    {/* <div className={t.itemDetails}>{item.duration} • <BsPersonFill/>{item.availability}</div> */}
+
+                                    <ul className={t.tourDetails}>
+                                        <li><FaRegCalendarCheck/>{item.duration}</li>
+                                        <li><BsPersonFill/>{item.availability}</li>
+                                    </ul>
+                                    
+                                    <Button to={item.link} w100>View Details</Button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            <div className={h.tourPackages}>
+                <div className={h.header}>
+                    <HeaderTitle className={h.headerTitle}>Popular Tour Packages</HeaderTitle>
+                    <Link className={h.headerSubtitle}>/ View All Tours</Link>
+                </div>
+                <TourSlider data={thumbData}/>
+            </div>
+
+            <Container>
+                <div className={h.header}>
+                    <HeaderTitle colorDark>Travel Articles</HeaderTitle>
+                    <Link className={h.headerSubtitle}>/ Read All Articles</Link>
+                </div>
+
+                <Article data={articleData}/>
+            </Container>
+        </React.Fragment>
+    )
 }
+
+export default TourPackages

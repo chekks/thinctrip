@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 import s from "../assets/scss/client/footer.module.scss";
 
-export default class Footer extends Component {
-    render() {
-        return (
+const Footer = () => {
+    return (
+        <React.Fragment>
             <div className={s.footer}>
                 <div className={s.footerContainer}>
                     <div className={s.footerItems}>
@@ -38,6 +38,8 @@ export default class Footer extends Component {
                     </div>
                 </div>
             </div>
-        )
-    }
+        </React.Fragment>
+    )
 }
+
+export default Footer
