@@ -1,0 +1,128 @@
+.cardContainer{
+    position: relative;
+    width: 275px !important;
+    flex: 0 0 275px;
+    cursor: pointer;
+
+    &:hover{
+        transform: translateY(-4px);
+        z-index: 2;
+        transition: all 0.3s ease;
+    }
+}
+
+.cardItem{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    overflow: hidden;
+    justify-content: stretch;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 6px #00000008;
+    outline: none;
+}
+
+.cardImg{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 6px 6px 0 0;
+    padding-bottom: 66.6%;
+    height: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.cardContent{
+    display: flex;
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.cardContentBottom{
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.cardTitle{
+    padding-top: 2px;
+    max-width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #212121;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    display: -webkit-box;
+    pointer-events: none;
+}
+
+.cardSubTitle{
+    color: #757575;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    z-index: 1;
+    font-weight: 100;
+    padding-bottom: 3px;
+}
+
+.cardReview{
+    max-width: 100%;
+    line-height: 16px;
+    color: #999;
+    align-items: center;
+    display: flex;
+    padding-top: 4px;
+}
+
+.tourPrice{
+    width: 100%;
+    font-size: 18px;
+    line-height: 16px;
+    word-break: break-all;
+    color: #2cb8af;
+    margin-left: 25px;
+
+    span{
+        color: #666666;
+        font-size: 14px;
+        padding-right: 5px;
+    }
+}
+
+.featuredBlogContainer{
+    p{
+        color: #757575;
+        display: flex;
+        align-items: center;
+        max-width: 100%;
+        font-size: 12px;
+        line-height: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        z-index: 1;
+        font-weight: 100;
+        padding-bottom: 3px;
+    }
+}
+
+.featuredBlogImg{
+    width: 25px;
+    margin-right: 3px;
+}
