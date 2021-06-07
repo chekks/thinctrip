@@ -261,3 +261,100 @@ export const itineraryData = [
       content: 'Breakfast. Prepare for a 3-hour journey that passes through the countryside scenery of Puerto Princesa until your reach the town of Taytay.'
   },
 ]
+
+export const destinationBaguio = [
+  {
+    id: 1,
+    name: "Baguio",
+    meta_name: "baguio",
+    content: "<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex</div>",
+    image:
+      {
+          url: "images/0001.jpg",
+          thumbnail_url : "images/thumbnails/0001.jpg",
+          original_filename: "myeow myeow"
+      },
+    status: "published",
+    specialties: [
+      {
+        id: 1,
+        destination_id: 1,
+        name: "Pinikpikan",
+        content:"Pinikpikan is a dish from the mountains of the Cordillera region in the Philippines. It is prepared by beating a live chicken with a stick prior to cooking. The beating bruises the chicken's flesh, bringing blood to its surface, which is said to improve the flavour after cooking",
+        image:
+        {
+            url: "images/0001.jpg",
+            thumbnail_url : "images/thumbnails/0001.jpg",
+            original_filename: "myeow myeow"
+        },
+        status: "published",
+        restaurants:[
+          {
+            id: 1,
+            destination_specialty_id: 1,
+            name: "",
+            address: "",
+            contact_number: ""
+          }
+        ] 
+      },
+      {
+        id: 2,
+        destination_id: 1,
+        name: "Champorado",
+        content:"Pinikpikan is a dish from the mountains of the Cordillera region in the Philippines. It is prepared by beating a live chicken with a stick prior to cooking. The beating bruises the chicken's flesh, bringing blood to its surface, which is said to improve the flavour after cooking",
+        image:
+        {
+            url: "images/0001.jpg",
+            thumbnail_url : "images/thumbnails/0001.jpg",
+            original_filename: "myeow myeow"
+        },
+        status: "published"
+      },
+      {
+        id: 3,
+        destination_id: 1,
+        name: "Sans Rival",
+        content:"Pinikpikan is a dish from the mountains of the Cordillera region in the Philippines. It is prepared by beating a live chicken with a stick prior to cooking. The beating bruises the chicken's flesh, bringing blood to its surface, which is said to improve the flavour after cooking",
+        image:
+        {
+            url: "images/0001.jpg",
+            thumbnail_url : "images/thumbnails/0001.jpg",
+            original_filename: "myeow myeow"
+        },
+        status: "published"
+      },
+      {
+        id: 4,
+        destination_id: 1,
+        name: "Pancit",
+        content:"Pinikpikan is a dish from the mountains of the Cordillera region in the Philippines. It is prepared by beating a live chicken with a stick prior to cooking. The beating bruises the chicken's flesh, bringing blood to its surface, which is said to improve the flavour after cooking",
+        image:
+        {
+            url: "images/0001.jpg",
+            thumbnail_url : "images/thumbnails/0001.jpg",
+            original_filename: "myeow myeow"
+        },
+        status: "published"
+      }
+    ],
+    attractions:[
+      {
+        id: 1,
+        destination_id: 1,
+        name: "Strawberry Farm",
+        content: "",
+        image:
+        {
+            url: "images/0001.jpg",
+            thumbnail_url : "images/thumbnails/0001.jpg",
+            original_filename: "myeow myeow"
+        },
+        status: "published"
+
+      }
+    ]
+
+
+  }
+]

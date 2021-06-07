@@ -6,6 +6,7 @@ import { SidePanel, HeaderTitle, Container } from '../../mainStyles'
 
 //Component
 import HeaderPanel from '../../component/HeaderPanel'
+import InnerNavbar from '../../component/widgets/InnerNavbar'
 import Accordion from '../../component/Accordion'
 import EnquiryForm from '../../component/forms/EnquiryForm'
 import GoogleMap from '../../component/GoogleMap'
@@ -61,15 +62,7 @@ const TourSingle = (props) => {
                         </ul>
                     </div>
 
-                    <div className={t.menuWrapper}>
-                        <ul className={t.menu}>
-                            <li>Details</li>
-                            <li>Gallery</li>
-                            <li>Itinerary</li>
-                            <li>Map</li>
-                            <li>Reviews</li>
-                        </ul>
-                    </div>
+                    <InnerNavbar />
                 </div>
                 
                 <div className={t.wrapper}>

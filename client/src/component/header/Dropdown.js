@@ -22,25 +22,27 @@ export default class Dropdown extends Component {
         this.setState({clicked: !this.state.clicked});
     }
 
-    onMouseEnter = () => {
+    onMouseEnter = (subMenuIndex) => {
+        console.log("hey mouse enetr", subMenuIndex);
         if (window.innerWidth < 960) {
-            this.setState({subMenu: false});
+            this.setState({subMenu: false, subMenuIndex:subMenuIndex});
         } else {
-            this.setState({subMenu: true});
+            this.setState({subMenu: true,  subMenuIndex:subMenuIndex});
         }
     };
     
     onMouseLeave = () => {
         if (window.innerWidth < 960) {
-            this.setState({subMenu: false});
+            this.setState({subMenu: false,  subMenuIndex:""});
         } else {
-            this.setState({subMenu: false});
+            this.setState({subMenu: false, subMenuIndex:""});
         }
     };
 
-    handleSubmenu = (item) => {
-        console.log("item", item.subMenu)
-        if(this.state.subMenu == true){
+    handleSubmenu = (item, index) => {
+
+        if(this.state.subMenu == true && this.state.subMenuIndex == index){
+
             return(
                 <div className={h.dropdownSubMenuContainer}>
                     {item.subMenu.map((subItem, subIndex) => 
@@ -49,7 +51,6 @@ export default class Dropdown extends Component {
                             className={h.dropdownLinks} 
                             to={subItem.to}
                             onClick={this.closeMobileMenu}>{subItem.name}</Link>
-                            <FaAngleRight className={h.caretRight}/>
                         </li>
                     )}
                 </div>
@@ -68,12 +69,12 @@ export default class Dropdown extends Component {
                             className={h.dropdownItem} 
                             key={index} 
                             onMouseLeave={this.onMouseLeave} 
-                            onMouseEnter={this.onMouseEnter}>
+                            onMouseEnter={() => this.onMouseEnter(index)}>
                                 <Link className={h.dropdownLinks} to={item.to}>{item.name}</Link>
                                 <FaAngleRight className={h.caretRight}/>
 
                                 <ul>
-                                    {this.handleSubmenu(item)}
+                                    {this.handleSubmenu(item, index)}
                                 </ul>
                             </li>
                         )

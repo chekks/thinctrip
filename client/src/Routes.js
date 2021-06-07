@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 //pages
 import Homepage from './pages/Homepage'
 import TourPackages from './pages/tour/TourPackages';
+import DestinationSingle from './pages/destinations/DestinationSingle';
 
 import AdminHomepage from './admin/components/AdminHomepage'
 import AdminLogin from './admin/AdminLogin'
@@ -19,6 +20,7 @@ export default class Routes extends Component {
                 <Switch>
                     <Route exact path="/" component={Homepage}/>
                     <Route exact path="/tour" component={TourPackages}/>
+                    <Route exact path="/destination/:permalink" exact component={DestinationSingle}/>
                     
 
                     {/* ADMIN ROUTES */}
@@ -28,6 +30,8 @@ export default class Routes extends Component {
                     
                     <Route exact path="/tour/north-to-south-15d-14n" component={TourSingle}/>
                     <Route exact path="/tour/north-to-south-15d-14n/review" component={ReviewForm}/>
+
+                    
 
                     {/* <Route component={NotFound}/> */}
                     
