@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import t from '../../assets/scss/client/tourSingle.module.scss'
 import h from "../../assets/scss/client/homepage.module.scss"
@@ -138,10 +138,7 @@ const TourSingle = (props) => {
                         </div>
                     </div>
 
-                    <SidePanel>
-                        <EnquiryForm/>
-                        <GuideWidget/>
-                    </SidePanel>
+                    
                 </div>
 
                 <div className={h.tourPackages}>

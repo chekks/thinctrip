@@ -93,7 +93,6 @@ export const HeaderBg = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
-    overflow: hidden;
     background-color: #e9e9e9;
     max-height: 80vh;
     position: relative;
@@ -147,12 +146,6 @@ export const TourPrice = styled.div`
         font-size: 28px;
         font-weight: 900;
     }
-`
-
-export const SidePanel = styled.div`
-    width: 350px;
-    top: -300px;
-    position: relative;
 `
 
 export const RateContainer = styled.div`

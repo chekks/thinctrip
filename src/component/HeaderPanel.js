@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
-import { HeaderBg, TourPrice } from '../mainStyles'
+import { SidePanel, HeaderBg, TourPrice } from '../mainStyles'
 import h from "../assets/scss/client/headerPanel.module.scss"
 // import '../assets/scss/function.scss'
 
 //Component
 import Currency from "../component/Currency"
+import EnquiryForm from '../component/forms/EnquiryForm'
+import GuideWidget from './widgets/GuideWidget'
 
 const PageContent = styled.div`
     display: flex;
@@ -65,13 +67,16 @@ const HeaderPanel = (props) => {
             return([
                 <PageContent>
                     <h1>{props.title}</h1>
-                    <div className={h.priceContainer}>
+                    <div className={h.sidePanel}>
                         <h2 className={h.priceRibbon}>Price</h2>
 
                         <TourPrice>
                             <span>From</span>
                             <p><Currency data="$"/>569</p>
                         </TourPrice>
+
+                        <EnquiryForm/>
+                        <GuideWidget/>
                     </div>
                 </PageContent>
             ])
