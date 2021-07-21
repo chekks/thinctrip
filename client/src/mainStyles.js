@@ -89,12 +89,11 @@ export const HeaderTitle = styled.h1`
 export const HeaderBg = styled.div`
     background-image: url(${props => props.src});
     width: 100%;
-    min-height: 50vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
     background-color: #e9e9e9;
-    max-height: 80vh;
+    max-height: 40vh;
     position: relative;
     top: -80px;
     margin-bottom: -80px;
