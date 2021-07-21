@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Route::prefix('admin/users')->group(function () {
+//     Route::post('/register', 'Api\UsersController@register');
+//     Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
+// });
+
+
+Route::post('/register', 'Api\UsersController@register');
+Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
+
+
+// Route::post('/register', 'Api\UsersController@register');
+// Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);

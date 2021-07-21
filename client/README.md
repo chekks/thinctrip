@@ -14,6 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 `npm i redux-devtools-extension`
 `npm i --save google-maps-react`
 `npm i slick-carousel`
+`npm install --save-dev redux-devtools-extension`
 
 ## Available Scripts
 

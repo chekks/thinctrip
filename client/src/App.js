@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link, useLocation, withRouter } from "react-router-dom";
+import './assets/scss/ui_components.scss';
+
 
 //components
 import Routes from './Routes';
@@ -26,16 +28,16 @@ class App extends Component {
       publicPage = false;
     }
 
-    if(pathArray[1] == 'login'){
+    if(pathArray[1] == 'login' || pathArray[1] == 'register'){
       content = <Routes></Routes>
-      require('bootstrap/dist/css/bootstrap.min.css'); 
+      //require('bootstrap/dist/css/bootstrap.min.css'); 
       console.log("App 1");
     }else{
       if (publicPage == true){
         content = <div className="wrapper"><ClientContainer/></div>;
         console.log("App 2");
       }else{
-        require('bootstrap/dist/css/bootstrap.min.css'); 
+        //require('bootstrap/dist/css/bootstrap.min.css'); 
         console.log("App 3");
         content = <AdminHomepage/>
       }

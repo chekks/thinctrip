@@ -1,6 +1,6 @@
 import React, { useState , useEffect} from "react";
 import { Link, useHistory } from "react-router-dom";
-import l from "../assets/scss/admin/adminLogin.module.scss";
+import r from "../assets/scss/admin/adminRegister.module.scss";
 //import { InputGroup, FormControl, Button } from "react-bootstrap";
 import {FaGoogle,FaFacebookSquare} from "react-icons/fa";
 
@@ -13,7 +13,7 @@ import { LeftContainer } from "./components/AdminLeftContainer";
 
 //redux
 import {connect} from 'react-redux'
-import {postUsersLogin} from '../redux'
+import {postUsersRegistration} from '../redux'
 
 const mapStateToProps = state => {
   return {
@@ -23,14 +23,17 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    postUsersLogin : (payload) =>  dispatch(postUsersLogin(payload)),
+    postUsersRegistration : (payload) =>  dispatch(postUsersRegistration(payload)),
   }
 }
 
-const AdminLogin = (props) => {
+const AdminRegister = (props) => {
   let initial_data = {
+    "firstname" : "",
+    "lastname" : "",
     "email" : "",
-    "password" : ""
+    "password": "",
+    "confirm_password": ""
   };
 
   let history = useHistory();
@@ -39,15 +42,6 @@ const AdminLogin = (props) => {
   const [data, setData] = useState(initial_data);
 
   useEffect (() => {
-    console.log("use effect");
-    console.log("props.users", props.users.data);
-    if("access_token" in props.users.data){
-      console.log("inside");
-      const location = {
-        pathname: '/admin/dashboard'
-      }
-      history.push(location);
-    }
     
   }, [data, props.users]);
 
@@ -55,8 +49,8 @@ const AdminLogin = (props) => {
     event.preventDefault();
   
     console.log("before post");
-    let return_data= await props.postUsersLogin(data);
-    
+    let return_data = await props.postUsersRegistration(data);
+    history.push("/admin/dashboard");
     console.log("after post");
   }
 
@@ -71,28 +65,54 @@ const AdminLogin = (props) => {
 
   return (
     <div className="flex adminMainContainer">
-      <LeftContainer className={l.leftContainer} src={AdminSidebarBackground}/>
-      <div className={l.rightContainer}>
-        <img src={AdminLogoDefault} className={l.logo} />
-        <div className={l.form}>
+      <LeftContainer className={r.leftContainer} src={AdminSidebarBackground}/>
+      <div className={r.rightContainer}>
+        <img src={AdminLogoDefault} className={r.logo} />
+        <div className={r.form}>
           <form method="post" onSubmit={(event) => handleSubmit(event)}>
             <TextField 
               className="form-control"
               type="text"
-              size="lg"
+              placeholder="First name"
+              name="firstname"
+              onchange={(event) => handleChangeTextEditor(event)}
+              id="register_firstname"
+
+            />
+            <TextField 
+              className="form-control"
+              type="text"
+              placeholder="Last name"
+              name="lastname"
+              onchange={(event) => handleChangeTextEditor(event)}
+              id="register_lastname"
+
+            />
+            <TextField 
+              className="form-control"
+              type="text"
               placeholder="Email"
               name="email"
               onchange={(event) => handleChangeTextEditor(event)}
-              id="login_username"
+              id="register_username"
 
             />
             <TextField 
               className="form-control"
               type="password"
-              size="lg"
               name="password"
               placeholder="Password"
-              id="login_password"
+              id="register_password"
+              onchange={(event) => handleChangeTextEditor(event)}
+
+            />
+
+            <TextField 
+              className="form-control"
+              type="password"
+              name="password"
+              placeholder="Confirm Password"
+              id="register_password"
               onchange={(event) => handleChangeTextEditor(event)}
 
             />
@@ -101,31 +121,30 @@ const AdminLogin = (props) => {
               // onClick={(event) => this.handleSubmit(event)} 
               type="submit" 
               variant="primary" 
-              size="lg" 
               label="Login"
               block
-              class={l.loginButton}
-              id="login_button">
+              class={r.loginButton}
+              id="register_button">
 
-              Login
+              Sign up
             </Button>
           </form>
         </div> 
-        <div className={l.lineContainer}>
-          <div className={l.hr}></div>
-          <div className={l.or}>OR</div>
+        <div className={r.lineContainer}>
+          <div className={r.hr}></div>
+          <div className={r.or}>OR</div>
         </div>
-        <div className={l.socialMediaContainer}>
+        <div className={r.socialMediaContainer}>
           <Button 
             onClick={(event) => handleSubmit(event)} 
             type="button" 
             variant="danger" 
             size="sm" 
             disabled={false}
-            className={l.btn_login_social_media}
+            className={r.btn_register_social_media}
             >
 
-            <FaGoogle/>Login with Google
+            <FaGoogle/>Sign up using Google
           </Button>
 
           <Button 
@@ -133,22 +152,22 @@ const AdminLogin = (props) => {
             type="button" 
             variant="blue" 
             size="sm" 
-            className={l.btn_login_social_media}
+            className={r.btn_register_social_media}
             >
 
-            <FaFacebookSquare/>Login with Facebook
+            <FaFacebookSquare/>Sign up using Facebook
           </Button>
           
         </div>
-        <div className={l.copyright}>Copyright © Thinctrip 2021</div>
+        <div className={r.copyright}>Copyright © Thinctrip 2021</div>
 
-        <div className={l.lineContainerSignUp}>
-          <div className={l.hr}></div>
+        <div className={r.lineContainerSignUp}>
+          <div className={r.hr}></div>
         </div>
 
-        <div className={l.signUpContainer}>
-          <p>Don't have an account?</p>
-          <Link to={{pathname: '/register'}} >Sign up now</Link>
+        <div className={r.signUpContainer}>
+          <p>Already have an account?</p>
+          <Link to={{pathname: '/login'}} >Login here</Link>
         </div>
       </div>
     </div>
@@ -156,4 +175,4 @@ const AdminLogin = (props) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(AdminLogin)
+export default connect(mapStateToProps, mapDispatchToProps)(AdminRegister)
