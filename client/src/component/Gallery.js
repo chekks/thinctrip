@@ -7,7 +7,7 @@ import '../assets/scss/client/slickSlider.scss'
 //Component
 import { galleryData } from '../component/Data'
 
-const Gallery = () => {
+const Gallery = (props) => {
 
     const [nav1, setNav1] = useState(null);
     const [nav2, setNav2] = useState(null);
@@ -28,7 +28,7 @@ const Gallery = () => {
     };
   
     const settingsThumbs = {
-      slidesToShow: 3,
+      slidesToShow: 5,
       slidesToScroll: 1,
       asNavFor: '.slider-for',
       dots: true,
@@ -41,8 +41,9 @@ const Gallery = () => {
     return (
   
       <div className="App">
-  
         <div className="slider-wrapper">
+
+          <h1 className="mb-50 heading border-bottom flex-left">{props.icon}{props.title}</h1>
   
           <Slider
             {...settingsMain}
@@ -54,7 +55,6 @@ const Gallery = () => {
   
               <div className="slick-slide" key={slide.id}>
                 <img className="slick-slide-image" src={`https://picsum.photos/800/400?img=${slide.id}`} />
-                <label className="slick-slide-label">{slide.label}</label>
               </div>
   
             )}

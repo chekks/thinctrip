@@ -5,7 +5,7 @@ const GuideWidget = () => {
     return (
         <React.Fragment>
             <div className={w.widgetContainer}>
-                <h1 className={w.widgetTitle}>Travel safe during COVID-19</h1>
+                <h2 className={w.widgetTitle}>Travel safe during COVID-19</h2>
                 <p className={w.widgetSubtitle}>What you can expect during your visit</p>
 
                 <ul className={w.widgetContent}>

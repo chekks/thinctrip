@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Container , CardImg, HeaderTitle } from '../mainStyles'
-import { Link } from 'react-router-dom'
+import { Container , CardImg } from '../mainStyles'
 import Slider from "react-slick";
 import t from "../assets/scss/client/tourSlider.module.scss";
-import ht from "../assets/scss/client/headerTitle.module.scss";
 
 //components
 import Rate from '../component/reviews/Rate'
@@ -64,11 +62,7 @@ export default class TourSlider extends Component {
         };
 
         return (
-            <React.Fragment>
-                <div className={ht.header}>
-                    <HeaderTitle className={ht.headerTitle}>Popular Tour Packages</HeaderTitle>
-                    <Link className={ht.headerSubtitle}>/ View All Tours</Link>
-                </div>
+            <div id="slick">
                 <Container>
                     <Slider {...settings}>
                         {this.state.thumbData.map((item, index) => 
@@ -105,7 +99,7 @@ export default class TourSlider extends Component {
                         )}
                     </Slider>
                 </Container>
-            </React.Fragment>
+            </div>
         )
     }
 }

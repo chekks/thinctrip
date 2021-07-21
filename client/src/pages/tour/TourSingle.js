@@ -1,21 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import t from '../../assets/scss/client/tourSingle.module.scss'
 import h from "../../assets/scss/client/homepage.module.scss"
-import { SidePanel, HeaderTitle, Container } from '../../mainStyles'
+import { HeaderTitle, Container } from '../../mainStyles'
 
 //Component
 import HeaderPanel from '../../component/HeaderPanel'
-import InnerNavbar from '../../component/widgets/InnerNavbar'
-import Accordion from '../../component/Accordion'
-import EnquiryForm from '../../component/forms/EnquiryForm'
-import GoogleMap from '../../component/GoogleMap'
-import GuideWidget from '../../component/widgets/GuideWidget'
 import Gallery from '../../component/Gallery'
-import { itineraryData } from '../../component/Data'
 import Review from '../../component/reviews/Review'
 import TourSlider from '../../component/TourSlider'
 import Article from '../../component/Article'
+import Itinerary from '../../component/itinerary/Itinerary'
+import TourDetails from './TourDetails'
 import { 
   thumbData, 
   articleData,
@@ -34,8 +30,7 @@ import {
     FaPlaneArrival,
     FaCommentAlt
 } from 'react-icons/fa'
-import { GrFormClose } from 'react-icons/gr'
-import { BsCheck } from 'react-icons/bs'
+
 
 const TourSingle = (props) => {
     return (
@@ -47,6 +42,8 @@ const TourSingle = (props) => {
             />
 
             <div className={t.container}>
+
+                {/* ************* Tour Info ************* */}
                 <div className={t.header}>
                     <div className={t.info}>
                         <ul>
@@ -62,79 +59,52 @@ const TourSingle = (props) => {
                         </ul>
                     </div>
 
-                    <InnerNavbar />
+                    <div className={t.menuWrapper}>
+                        <ul className={t.menu}>
+                            <li>Details</li>
+                            <li>Gallery</li>
+                            <li>Itinerary</li>
+                            <li>Map</li>
+                            <li>Reviews</li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <div className={t.wrapper}>
                     <div className={t.content}>
-                        <h1><FaRegFileAlt/>Tour Details</h1>
-                        <div className={t.details}>
-                            <div className={t.includes}>
-                                <h3>Inclusive Of</h3>
-                                <ul>
-                                    <li><span><BsCheck/></span> One (1) night accommodation at Astoria Palawan</li>
-                                    <li><span><BsCheck/></span>Three (3) nights accommodation at Flower Island</li>
-                                    <li><span><BsCheck/></span>Two (2) nights accommodation at El Nido Resorts Miniloc</li>
-                                    <li><span><BsCheck/></span>Meals as per program (B = Breakfast / L = Lunch / D = Dinner)</li>
-                                    <li><span><BsCheck/></span>Private Airport transfers in Manila as specified in the Itinerary</li>
-                                    <li><span><BsCheck/></span>Private Transfers from Puerto Princesa Airport to Sheridan Resort</li>
-                                </ul>
-                            </div>
 
-                            <div className={t.excludes}>
-                                <h3>Not Inclusive Of</h3>
-                                <ul>
-                                    <li><span><GrFormClose/></span>Meals not specified in the itinerary</li>
-                                    <li><span><GrFormClose/></span>Flights Manila - Puerto Princesa / El Nido - Manila (rate subject to availability)</li>
-                                    <li><span><GrFormClose/></span>Expenses of personal nature</li>
-                                </ul>
-                            </div>
+                        {/* ************* Tour Details ************* */}
+                        <div className={t.tourDetails}>
+                            <TourDetails
+                                title="Tour Details"
+                                icon={<FaRegFileAlt/>}
+                            />
                         </div>
 
-                        <h1><FaMapSigns/>Itinerary</h1>
+                        {/* ************* Itinerary ************* */}
                         <div className={t.itinerary}>
-                            <ul>
-                            {itineraryData.map((item, index) =>
-                                <li className={t.itineraryItem} key={index}>
-                                    <div className={t.itineraryTrail}>
-                                        <span>
-                                            {item.day}
-                                        </span>
-                                    </div>
-                                
-                                    <div className={t.itineraryDetails}>
-                                        <h4>{item.title}</h4>
-                                        <p>{item.description}</p>
-                                        <Accordion>
-                                            <img src="https://media-cdn.tripadvisor.com/media/photo-s/05/e0/2b/c0/white-beach-puerto-galera.jpg"/>
-                                            <p>{item.content}</p>
-                                        </Accordion>
-                                    </div>
-                                </li>
-                            )}
-                            </ul>
-
-                            <div className={t.map}>
-                            {/* <iframe src="https://www.google.com/maps/d/u/0/embed?mid=12pO_Q4yf2Ff3YSsmBeJYiK6ztKpkOasW" width="380" height="480"></iframe> */}
-                                <GoogleMap/>
-                            </div>
+                            <Itinerary
+                                title="Itinerary"
+                                icon={<FaMapSigns/>}
+                            />
                         </div>
 
-                        <h1><FaCameraRetro/>Gallery</h1>
+                        {/* ************* Gallery ************* */}
                         <div className={t.gallery}>
-                            <Gallery/>
+                            <Gallery
+                                title="Gallery"
+                                icon={<FaCameraRetro/>}
+                            />
                         </div>
                         
-                        <h1><FaCommentAlt/>Reviews</h1> 
+                        {/* ************* Reviews ************* */}
                         <div className={t.reviews}>
-                            <Review/>
+                            <Review
+                                title="Reviews"
+                                icon={<FaCommentAlt/>}
+                            />
                         </div>
                     </div>
-
-                    <SidePanel>
-                        <EnquiryForm/>
-                        <GuideWidget/>
-                    </SidePanel>
                 </div>
 
                 <div className={h.tourPackages}>

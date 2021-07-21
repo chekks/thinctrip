@@ -1,3 +1,12 @@
+// Utilities
+@import './assets/scss/utilites/helperClasses';
+@import './assets/scss/utilites/layout';
+
+// Components
+@import './assets/scss/components/slick.scss';
+
+@import './assets/scss/variables';
+
 html {
     scroll-behavior: smooth;
 }
@@ -14,6 +23,10 @@ li, a {
 }
 
 a{
+    color: #2cb8af;
+}
+
+svg{
     color: #2cb8af;
 }
 
