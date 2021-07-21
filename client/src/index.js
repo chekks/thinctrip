@@ -10,9 +10,9 @@ import configureStore from './redux/configureStore'
 const store = configureStore()
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
-  </Provider>, 
+  <BrowserRouter>
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  </BrowserRouter>, 
 document.getElementById('root'));
