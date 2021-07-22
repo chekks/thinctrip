@@ -9,7 +9,7 @@ import Accordion from '../Accordion'
 const  Itinerary = (props) => {
     return (
         <React.Fragment>
-            <h1 className="mb-50 heading border-bottom flex-left"><span className="mr-10">{props.icon}</span>{props.title}</h1>
+            <h1 className="mb-50 heading border-bottom flex-left">{props.icon}{props.title}</h1>
             <div className={i.wrapper}>
                 <ul>
                     {itineraryData.map((item, index) =>
