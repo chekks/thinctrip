@@ -1,0 +1,21 @@
+.main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .wrapper {
+        width: 90%;
+
+        .container {
+            background: #F5F8F9;
+            border-radius: 35px;
+            padding: 30px 50px;
+            height: 100vh;
+            margin: 30px;
+        }
+    } 
+
+    .sidePanel {
+        width: 330px;
+    }
+}

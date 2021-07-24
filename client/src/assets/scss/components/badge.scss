@@ -1,0 +1,73 @@
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    // Type
+    &-text {
+        padding: 3px 10px;
+        border-radius: 20px;
+    }
+
+    &-number {
+        padding: 5px 10px;
+        border-radius: 50%;
+    }
+
+    // Variant
+    &-primary {
+        color: $col-white;
+        background-color: $lightBlue;
+        border-color: $lightBlue;
+    }
+
+    &-scondary {
+        color: $col-white;
+        background-color: $grey;
+        border-color: $grey;
+    }
+
+    &-success {
+        color: $col-white;
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    &-danger {
+        color: #fff;
+        background-color: $red;
+        border-color: $red;
+    }
+
+    &-warning {
+        color: #212529;
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    &-info {
+        color: #fff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+    &-light {
+        color: #212529;
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+    }
+
+    &-dark {
+        color: #fff;
+        background-color: #343a40;
+        border-color: #343a40;
+    }
+
+    &-notification {
+        color: #fff;
+        background-color: $col-orange;
+        border-color: $col-orange;
+        box-shadow: 0 0px 0px 0 rgb(0,0,0), 0 3px 10px 0 rgba(0, 0, 0, 0.35);
+    }
+}
+

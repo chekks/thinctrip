@@ -15,24 +15,25 @@ const handleChange = (event, props) =>{
 	if(ValueChecker.validateValue(props.onchange) != "" && typeof props.onchange === "function"){
 		props.onchange(event);
 	}
-	
 }
 
 const TextField = (props) => {
 	
 	let size = checkSize(props.size);
 	let type = checkType(props.type);
+	let round = props.round == true ? `input-round`: "";
 
 	return (
 		<React.Fragment>
 			<input 
 				type={type} 
-				className={`form-control${size}` } 
+				className={`form-control${size} ${round}` } 
 				placeholder={props.placeholder}
 				name={props.name}
 				id={props.id}
 				onChange={(event)=>handleChange(event , props)}
 			/>
+			
 		</React.Fragment>
 	)
 }
@@ -42,7 +43,8 @@ TextField.defaultProps = {
 	placeholder: "",
 	size: "default",
 	name: "",
-	id: ""
+	id: "",
+	round: false
 }
 
 export default TextField

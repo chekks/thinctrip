@@ -1,0 +1,31 @@
+@import '../variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #0000000d;
+
+    .headerLeft p {
+        font-size: $font-md;
+        font-weight: $font-weight-light;
+        padding-top: 8px;
+    }
+
+    .headerRight {
+        display: flex;
+        align-items: baseline;
+
+        .headerNotification {
+            background: #fff;
+            border-radius: 50%;
+            width: 55px;
+            height: 40px;
+            margin-left: 15px;
+            position: relative;
+
+            svg {margin: 0;}
+        } 
+    }
+}

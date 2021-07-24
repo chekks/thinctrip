@@ -5,35 +5,7 @@ import sb from '../../assets/scss/admin/adminSidebar.module.scss'
 import AdminBoxIcon from './AdminBoxIcon'
 
 //for deletion
-import LogoWhite from '../../assets/images/logo-white.png'
-import AdminSidebarBackground from '../../assets/images/admin_sidebar_logo.jfif'
-
-
-export const SidebarContainer = styled.div`
-    background-image: url(${props => props.src});
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-
-    div{
-      position: relative;
-      z-index: 999
-    }
-
-    &:after{
-      content: "";
-      background: rgba(28,40,58,.8);
-      width: 300px;
-      height: 100%;
-      z-index: 4;
-      position: absolute;
-      top: 0;
-      transition: all 0.5s ease;
-    }
-
-`;
-
+import Logo from '../../assets/images/logo-default.png'
 
 export default class AdminSidebar extends Component {
 
@@ -142,8 +114,8 @@ export default class AdminSidebar extends Component {
         },
         {
           icon: "FaNewspaper",
-          label: "Articles",
-          link: "/admin/articles",
+          label: "Testimonials",
+          link: "/admin/Testimonials",
           hasSubMenu: false,
           subMenu : []
         },
@@ -251,25 +223,23 @@ export default class AdminSidebar extends Component {
     //const menuBar = this.state[this.state.user_type].menuBar;
     let userType = sessionStorage.getItem('userType');
     const menuBar =  userType != undefined ? this.state[userType].menuBar : this.state[this.state.user_type].menuBar;
+
     return (
-      <div className={sb.sidebar} src={AdminSidebarBackground}>
-        <div className={sb.sidebarContainer}>
-          <SidebarContainer src={AdminSidebarBackground}>
-            <div className="flexCenter pt-20 pb-20">
-              <img src={LogoWhite} className={sb.imgLogo} />
-            </div>
-          </SidebarContainer>
-          <div className={sb.navLinksContainer}>
+      <div className={sb.sidebar}>
+        <div className={sb.wrapper}>
+
+          <div className="flex-center">
+            <img src={Logo} className={sb.logo} />
+          </div>
+
+          <div>
             {
-              
               menuBar.map((menu) =>{
                 return(
-                  <div>
                     <Link to={menu.link} className={sb.navLinks}>
                       <AdminBoxIcon icon={menu.icon}/>
                       {menu.label}
                     </Link>
-                  </div>
                 )
               })
             }

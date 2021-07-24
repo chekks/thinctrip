@@ -22,3 +22,10 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+.flex-start {
+    @include flex;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+}
