@@ -115,7 +115,7 @@ export default class AdminSidebar extends Component {
         {
           icon: "FaNewspaper",
           label: "Testimonials",
-          link: "/admin/Testimonials",
+          link: "/admin/articles",
           hasSubMenu: false,
           subMenu : []
         },
