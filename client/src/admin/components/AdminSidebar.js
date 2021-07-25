@@ -108,14 +108,21 @@ export default class AdminSidebar extends Component {
         {
           icon: "FaChartPie",
           label: "Dashboard",
-          link: "/dashboard",
+          link: "/admin/dashboard",
+          hasSubMenu: false,
+          subMenu : []
+        },
+        {
+          icon: "FaCommentAlt",
+          label: "Enquiries",
+          link: "/admin/enquiries",
           hasSubMenu: false,
           subMenu : []
         },
         {
           icon: "FaNewspaper",
           label: "Testimonials",
-          link: "/admin/articles",
+          link: "/admin/testimonials",
           hasSubMenu: false,
           subMenu : []
         },

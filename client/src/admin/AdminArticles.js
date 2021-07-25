@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { FaNewspaper } from "react-icons/fa";
 
 import DataTable from '../component/ui/DataTable'
+import AdminHeader from './components/AdminHeader'
 
 export default class AdminArticles extends Component {
     
@@ -45,6 +46,10 @@ export default class AdminArticles extends Component {
         
         return (
             <React.Fragment>
+                <AdminHeader
+                    name="Testimonials"
+                    description="Clients say it best...real feedback from real clients!"
+                />
                 <DataTable
                     headers = {headers}
                     data = {data}

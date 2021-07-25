@@ -13,7 +13,7 @@ const AdminHeader = (props) => {
             <div className={h.header}>
                 <div className={h.headerLeft}>
                     <h1>{props.name}</h1>
-                    <p className="text-muted">Clients say it best...real feedback from real clients!</p>
+                    <p className="text-muted">{props.description}</p>
                 </div>
 
                 <div className={h.headerRight}>

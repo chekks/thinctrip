@@ -29,7 +29,7 @@ export default class Routes extends Component {
                     <Route exact path="/admin/dashboard" component={AdminDashboard} />
                     <Route exact path="/login" component={AdminLogin}/>
                     <Route exact path="/register" component={AdminRegister}/>
-                    <Route exact path="/admin/articles" component={AdminArticles}/>
+                    <Route exact path="/admin/testimonials" component={AdminArticles}/>
                     
                     <Route exact path="/tour/north-to-south-15d-14n" component={TourSingle}/>
                     <Route exact path="/tour/north-to-south-15d-14n/review" component={ReviewForm}/>
