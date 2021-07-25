@@ -2,11 +2,12 @@
     --side-padding: 20px;
     --border-radius: 34px;
     --accent-br: 15px;
-    width: 300px;
+    width: 260px;
+    padding-bottom: 20px;
 }
 .calendar select {
     background-color: #f3f4f6;
-    padding: 10px 15px;
+    padding: 10px;
 }
 .calendar__opts, .calendar__buttons {
     background-color: #fff;
@@ -35,17 +36,17 @@
     color: #c5c8ca;
 }
 .calendar__dates {
-    padding: 10px var(--side-padding);
+    padding: 5px var(--side-padding);
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
 .calendar__date {
-    --height: calc(400px / 6 - var(--side-padding));
+    --height: calc(340px / 6 - var(--side-padding));
     text-align: center;
     height: var(--height);
     line-height: var(--height);
     font-weight: 600;
-    font-size: 1.02rem;
+    font-size: 14px;
     cursor: pointer;
     position: relative;
 }
