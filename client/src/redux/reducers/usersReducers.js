@@ -2,14 +2,16 @@ import {
 	POST_USERS_LOGIN_SUCCESS, 
 	POST_USERS_LOGIN_FAILURE,
 	POST_USERS_REGISTER_SUCCESS,
-	POST_USERS_REGISTER_FAILURE
+	POST_USERS_REGISTER_FAILURE,
+	GET_USERS_SUCCESS
 } from '../constants.js'
 
 const initialState = {
     loading: true,
     data: {},
     error: [],
-	registration : {}
+	registration : {},
+	admin_users: []
 }
 
 const usersReducer = (state = initialState, action)=>{
@@ -41,6 +43,13 @@ const usersReducer = (state = initialState, action)=>{
 					loading: false,
 					error: action.error,
 					registration : []
+
+				}
+			case GET_USERS_SUCCESS:
+				return {
+					...state,
+					loading: false,
+					admin_users : action.admin_users
 
 				}
 			default: 

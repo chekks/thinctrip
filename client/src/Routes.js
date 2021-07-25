@@ -11,6 +11,7 @@ import AdminLogin from './admin/AdminLogin'
 import AdminRegister from './admin/AdminRegister'
 import AdminArticles from './admin/AdminArticles';
 import AdminDashboard from './admin/AdminDashboard';
+import AdminUsers from './admin/AdminUsers';
 
 import TourSingle from './pages/tour/TourSingle'
 import ReviewForm from './component/forms/ReviewForm'
@@ -27,6 +28,7 @@ export default class Routes extends Component {
 
                     {/* ADMIN ROUTES */}
                     <Route exact path="/admin/dashboard" component={AdminDashboard} />
+                    <Route exact path="/admin/users" component={AdminUsers} />
                     <Route exact path="/login" component={AdminLogin}/>
                     <Route exact path="/register" component={AdminRegister}/>
                     <Route exact path="/admin/testimonials" component={AdminArticles}/>

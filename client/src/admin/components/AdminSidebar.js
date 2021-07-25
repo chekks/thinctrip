@@ -193,7 +193,7 @@ export default class AdminSidebar extends Component {
         {
           icon: "FaUserAlt",
           label: "Users",
-          link: "/",
+          link: "/admin/users",
           hasSubMenu: false,
           subMenu : []
         },

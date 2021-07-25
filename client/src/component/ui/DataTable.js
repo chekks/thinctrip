@@ -51,14 +51,12 @@ const formatTableCell = (datacell, props) => {
 
 
 const DataTable = (props) => {
-
+    console.log("here are the props", props);
     return (
         <div className="table-wrapper">
             <table className="table table-striped">
                 <thead>
-                    <tr>
-                        {formatHeader(props.headers, props.columns)}
-                    </tr>
+                    <tr>{formatHeader(props.headers, props.columns)}</tr>
                 </thead>
                 <tbody>
                     {props.data.map((column) => {
