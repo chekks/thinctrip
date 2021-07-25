@@ -70,6 +70,10 @@ const Homepage = (props) => {
         </Container>
 
         <div className={h.tourPackages}>
+            <div className={h.header}>
+                <HeaderTitle className={h.headerTitle}>Popular Tour Packages</HeaderTitle>
+                <Link to="/" className={h.headerSubtitle}>/ View All Tours</Link>
+            </div>
             <TourSlider data={thumbData}/>
         </div>
 
@@ -83,7 +87,7 @@ const Homepage = (props) => {
 
         <Container>
             <div className={h.header}>
-                <HeaderTitle colorDark>Travel Articles</HeaderTitle>
+                <HeaderTitle className={h.headerTitle} colorDark>Travel Testimonials</HeaderTitle>
                 <Link to="/" className={h.headerSubtitle}>/ Read All Articles</Link>
             </div>
 
