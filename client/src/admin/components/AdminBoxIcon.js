@@ -17,7 +17,12 @@ import {
     FaUserAlt,
     FaMapMarkerAlt,
     FaWrench,
-    FaCommentAlt
+    FaCommentAlt,
+    FaIdCard,
+    FaFileInvoiceDollar,
+    FaRegAddressBook,
+    FaEnvelopeOpenText,
+    FaCloudUploadAlt
 } from "react-icons/fa";
 
 export default class AdminBoxIcon extends Component {
@@ -39,7 +44,12 @@ export default class AdminBoxIcon extends Component {
         FaUserAlt: <FaUserAlt/>,
         FaMapMarkerAlt: <FaMapMarkerAlt />,
         FaWrench : <FaWrench />,
-        FaCommentAlt: <FaCommentAlt/>
+        FaCommentAlt: <FaCommentAlt/>,
+        FaIdCard: <FaIdCard/>,
+        FaFileInvoiceDollar: <FaFileInvoiceDollar/>,
+        FaRegAddressBook: <FaRegAddressBook/>,
+        FaEnvelopeOpenText: <FaEnvelopeOpenText/>,
+        FaCloudUploadAlt: <FaCloudUploadAlt/>
     };
     
     render() {

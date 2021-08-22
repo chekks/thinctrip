@@ -1,9 +1,58 @@
 @import './admin.scss';
 
 .sidebar {
-    width: 310px;
+    width: 280px;
     height: 100%;
-    overflow-y: auto;
+    position: fixed;
+
+    @media screen and (max-width: 960px) {
+        width: 280px;
+        height: 100%;
+        position: fixed;
+        opacity: 1;
+        transition: 850ms;
+        background: #fff;
+    }
+
+    .menu {
+        position: relative;
+
+        @media screen and (max-width: 960px) {
+            overflow-y: auto;
+            height: calc(100vh - (3.5rem + 1px));
+        }
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .toggle{
+        display: none;
+
+        svg {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+    
+        @media screen and (max-width: 960px) {
+            display: block;
+            transform: translate(-100%, 60%);
+            cursor: pointer;
+            z-index: 2;
+            position: absolute;
+            top: -15px;
+            right: -30px;
+            transition: 0.3s;
+            background: #2cb8af;
+            padding: 8px;
+            border-radius: 50%;
+        }
+    }
 
     .wrapper {
         position: relative;
@@ -39,11 +88,5 @@
             border-left: 3px solid #2cb8af;
             font-weight: 600;
         }
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .sidebar{
-        display:none;
     }
 }

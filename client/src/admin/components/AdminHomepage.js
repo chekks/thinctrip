@@ -11,18 +11,17 @@ import AdminSidepanel from './AdminSidepanel';
 export default class AdminHomepage extends Component {
   render() {
     return (
-      <div className={m.main}>
-        <AdminSidebar />
-        <div className={m.wrapper}>
-          <div className={m.container}>
-            <Routes></Routes>
+      <React.Fragment>
+        <div className={m.main}>
+          <AdminSidebar />
+          <div className={m.wrapper}>
+            <div className={m.container}>
+              <Routes></Routes>
+            </div>
           </div>
         </div>
-
-        <div className={m.sidePanel}>
-          <AdminSidepanel/>
-        </div>
-      </div>
+        <AdminSidepanel/>
+      </React.Fragment> 
     )
   }
 }

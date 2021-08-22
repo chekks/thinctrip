@@ -5,8 +5,10 @@ const AdminWidgets = (props) =>{
     return (
         <React.Fragment>
             <div className="widget">
-                <h1>{props.value}</h1>
-                <span className="text-muted widget-description">{props.description}</span>
+                <div>
+                    <h1>{props.value}</h1>
+                    <span className="text-muted widget-description">{props.description}</span>
+                </div>
 
                 <div className="widget-details">
                     {props.children}

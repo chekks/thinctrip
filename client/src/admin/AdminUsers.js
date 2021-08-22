@@ -84,10 +84,10 @@ const mapStateToProps = state => {
 
 
 const AdminUsers = (props) => {
-    const headers = ["Email", "First Name", "Last Name", "Email Verified", "Actions"];
+    const headers = ["First Name", "Last Name", "Email", "Email Verified", "Actions"];
     const data = [];
     const columns = {
-        enabled : ["email", "firstname", "lastname", "is_verified", "actions"],
+        enabled : ["firstname", "lastname", "email", "is_verified", "actions"],
         disabled: []
     };
     const actions = [];

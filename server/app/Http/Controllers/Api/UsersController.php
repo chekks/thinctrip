@@ -13,6 +13,7 @@ class UsersController extends Controller
     public function getAdminUsers()
     {
         $users = User::get();
+        //print_r(phpinfo());
         return response($users, 200);
     }
 

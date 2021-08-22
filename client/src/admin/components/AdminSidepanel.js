@@ -1,14 +1,32 @@
-import React from 'react'
+import { React, useState } from 'react'
 import s from '../../assets/scss/admin/adminSidepanel.module.scss'
+import styled from 'styled-components'
+import { IconContext } from 'react-icons/lib'
 
 // Image
 import avatar from '../../assets/images/icons/man.png'
-import { FaAngleDown, FaPlane, FaUserAlt, FaRegFlag, FaBriefcase } from 'react-icons/fa'
+import { FaAngleDown, FaPlane, FaUserAlt, FaRegFlag, FaBriefcase, FaBars, FaTimes } from 'react-icons/fa'
 import Calendar from '../../component/ui/Calendar'
 
+export const SidePanel = styled.div`
+    right: ${props => props.click ? 0 : '-300px'};
+`;
+
 const AdminSidepanel = (props) => {
+    const [clicked, setClicked] = useState(false);
+
+    const handleClick = () => {
+        setClicked(!clicked);
+    }
+
     return (
-        <React.Fragment>
+        <SidePanel className={s.sidePanel} onClick={handleClick} click={clicked}>
+            <IconContext.Provider value={{color: '#fff'}}>
+              <div className={s.toggle} onClick={handleClick}>
+                  {clicked ? <FaTimes /> : <FaBars />}
+              </div>
+            </IconContext.Provider>
+            
             <div className={s.profile}>
                 <div className={`${s.profileImage} pr-15`}>
                     <img src={avatar} alt="Profile" />
@@ -76,7 +94,7 @@ const AdminSidepanel = (props) => {
                     </ul>
                 </div>
             </div>
-        </React.Fragment>
+        </SidePanel>
     )
 }
 
