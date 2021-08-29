@@ -30,3 +30,10 @@ Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
 Route::get('/users', 'Api\UsersController@getAdminUsers');
 // Route::post('/register', 'Api\UsersController@register');
 // Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
+
+Route::prefix('enquiries')->group(function () {
+    Route::post('', 'Api\EnquiriesController@addEnquiries');
+    Route::get('/users', function () {
+        // Matches The "/admin/users" URL
+    });
+});
