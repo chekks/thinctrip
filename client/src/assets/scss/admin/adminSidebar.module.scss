@@ -21,6 +21,11 @@
             overflow-y: auto;
             height: calc(100vh - (3.5rem + 1px));
         }
+
+        li {
+            position: relative;
+            overflow: hidden;
+        }
     }
 
     .logo {

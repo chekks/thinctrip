@@ -5,11 +5,24 @@ import { IconContext } from 'react-icons/lib'
 
 // Image
 import avatar from '../../assets/images/icons/man.png'
-import { FaAngleDown, FaPlane, FaUserAlt, FaRegFlag, FaBriefcase, FaBars, FaTimes } from 'react-icons/fa'
+import { 
+    FaAngleDown, 
+    FaPlane, 
+    FaUserAlt, 
+    FaRegFlag, 
+    FaBriefcase, 
+    FaBars, 
+    FaTimes,
+    FaThList 
+} from 'react-icons/fa'
 import Calendar from '../../component/ui/Calendar'
 
 export const SidePanel = styled.div`
     right: ${props => props.click ? 0 : '-300px'};
+`;
+
+export const Toggle = styled.div`
+    display: ${props => props.click ? 'none' : 'block'};
 `;
 
 const AdminSidepanel = (props) => {
@@ -21,13 +34,13 @@ const AdminSidepanel = (props) => {
 
     return (
         <SidePanel className={s.sidePanel} onClick={handleClick} click={clicked}>
-            <IconContext.Provider value={{color: '#fff'}}>
-              <div className={s.toggle} onClick={handleClick}>
-                  {clicked ? <FaTimes /> : <FaBars />}
-              </div>
-            </IconContext.Provider>
-            
+
+              <Toggle className={s.toggle} onCli    ck={handleClick} click={clicked}>
+                  <FaThList />
+              </Toggle>
+
             <div className={s.profile}>
+                <div className={s.close}><FaTimes/></div>
                 <div className={`${s.profileImage} pr-15`}>
                     <img src={avatar} alt="Profile" />
                 </div>
