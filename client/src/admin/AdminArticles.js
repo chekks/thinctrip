@@ -13,7 +13,6 @@ export default class AdminArticles extends Component {
             disabled: []
         }
 
-
         const data = [
             {
                 id: 1,

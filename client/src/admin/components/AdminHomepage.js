@@ -5,7 +5,7 @@ import '../../assets/scss/functions.scss'
 import m from '../../assets/scss/admin/adminMain.module.scss'
 
 // Components
-import AdminSidebar  from './AdminSidebar'
+import AdminSidebar  from './sidebar/AdminSidebar'
 import AdminSidepanel from './AdminSidepanel';
 
 export default class AdminHomepage extends Component {

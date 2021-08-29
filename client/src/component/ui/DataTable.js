@@ -28,9 +28,6 @@ const formatTableCell = (datacell, props) => {
         // else{
         //     data.push(<DataTableCell>{datacell[key]}</DataTableCell>);
         // }
-        console.log("props.columns",size);
-        console.log("props.columns",key);
-        console.log("props.columns.enabled",props.columns.enabled);
         if(props.columns.enabled.includes(key)){
             data.push(<DataTableCell>{datacell[key]}</DataTableCell>);
         }
