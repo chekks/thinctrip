@@ -120,7 +120,7 @@ export default class DestinationSingle extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div className={t.tour}>
                 <Modal item = {this.state.active_item} modal_id="destination_modal"/>
                 <HeaderPanel
                     type="destination_single"
@@ -201,7 +201,7 @@ export default class DestinationSingle extends Component {
                     <Article data={articleData}/>
                 </Container>
     
-            </React.Fragment>
+            </div>
         )
     }
 }

@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-//use App\Models\Enquiries;
+use App\Models\Enquiries;
 use Illuminate\Http\Request;
+use Validator;
 
-class Enquiries extends Controller
+class EnquiriesController extends Controller
 {
     //
     public function addEnquiries(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'name' => 'email|required|max:255',
-            'email' => 'required|max:255',
+            'name' => 'required|max:255',
+            'email' => 'email|required|max:255',
             'message' => 'required|max:255',
         ]);
 

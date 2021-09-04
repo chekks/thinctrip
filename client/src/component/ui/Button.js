@@ -17,7 +17,7 @@ const checkVariant = (variant) => {
 } 
 
 const Button = (props) =>  {
-
+	console.log("inside");
 	let size = checkSize(props.size);
 	let type = checkType(props.type);
 	let variant = checkVariant(props.variant);
@@ -30,7 +30,8 @@ const Button = (props) =>  {
 			type={type}
 			{ ...( props.name && { name: props.name } ) }
 			{ ...( props.placeholder && { placeholder: props.placeholder } ) }
-			{ ...( props.id && { placeholder: props.id } ) }
+			{ ...( props.id && { id: props.id } ) }
+			{ ...( props.onClick && { onClick:props.onClick } )}
 		>
 			{props.children}
 		</button>
@@ -46,7 +47,8 @@ Button.defaultProps = {
 	variant: "",
 	block: false,
 	class: "",
-	placeholder: ""
+	placeholder: "",
+	onClick: () => {}
 }
 
 

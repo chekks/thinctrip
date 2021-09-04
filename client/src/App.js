@@ -35,10 +35,10 @@ class App extends Component {
     }else{
       if (publicPage == true){
         content = <div className="wrapper"><ClientContainer/></div>;
-        console.log("App 2");
+        //console.log("App 2");
       }else{
         //require('bootstrap/dist/css/bootstrap.min.css'); 
-        console.log("App 3");
+        //console.log("App 3");
         content = <AdminHomepage/>
       }
 

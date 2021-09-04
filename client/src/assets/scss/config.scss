@@ -10,6 +10,25 @@ $redHover: #bb3f30;
 $blue: #3b5998;
 $blueHover: #2d4473;
 
+// ALERTS
+$alertPrimary: #cfe2ff;
+$alertSecondary: #e2e3e5;
+$alertSuccess: #d1e7dd;
+$alertDanger: #f8d7da;
+$alertWarning: #fff3cd;
+$alertInfo: #cff4fc;
+$alertLight: #fefefe;
+$alertDark: #d3d3d4;
+
+$alertTextPrimary: #084298;
+$alertTextSecondary: #41464b;
+$alertTextSuccess: #0f5132;
+$alertTextDanger: #842029;
+$alertTextWarning: #664d03;
+$alertTextInfo: #084298;
+$alertTextLight: #636464;
+$alertTextDark: #141619;
+
 .flexCenter {
   display: flex;
   justify-content: center;
@@ -36,6 +55,10 @@ a {
   text-decoration: none;
 }
 //temporary
+
+.required {
+  color: $red;
+}
 
 .destination_slider_container {
   padding: 0 45px;

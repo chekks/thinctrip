@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 import usersReducers from './reducers/usersReducers'
+import enquiriesReducers from './reducers/enquiriesReducers'
 
 const rootReducer = combineReducers({
-    users: usersReducers
+    users: usersReducers,
+    enquiries: enquiriesReducers
 
 })
 

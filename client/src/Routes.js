@@ -10,6 +10,7 @@ import AdminHomepage from './admin/components/AdminHomepage'
 import AdminLogin from './admin/AdminLogin'
 import AdminRegister from './admin/AdminRegister'
 import AdminArticles from './admin/AdminArticles';
+import AdminEnquiries from './admin/AdminEnquiries';
 import AdminDashboard from './admin/AdminDashboard';
 import AdminUsers from './admin/AdminUsers';
 
@@ -32,6 +33,7 @@ export default class Routes extends Component {
                     <Route exact path="/login" component={AdminLogin}/>
                     <Route exact path="/register" component={AdminRegister}/>
                     <Route exact path="/admin/testimonials" component={AdminArticles}/>
+                    <Route exact path="/admin/enquiries" component={AdminEnquiries}/>
                     
                     <Route exact path="/tour/north-to-south-15d-14n" component={TourSingle}/>
                     <Route exact path="/tour/north-to-south-15d-14n/review" component={ReviewForm}/>

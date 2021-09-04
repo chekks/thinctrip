@@ -34,7 +34,7 @@ import {
 
 const TourSingle = (props) => {
     return (
-        <React.Fragment>
+        <div className={t.tour}>
             <HeaderPanel
                 type="tour"
                 title="FROM HIGHLANDS TO ISLANDS — 12D & 11N"
@@ -124,7 +124,7 @@ const TourSingle = (props) => {
                     <Article data={articleData}/>
                 </Container>
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 

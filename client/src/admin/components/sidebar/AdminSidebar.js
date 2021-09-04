@@ -27,7 +27,7 @@ const AdminSidebar = (props) => {
     setClicked(!clicked);
   }
 
-  const data = SidebarData.contributor.menuBar;
+  const data = SidebarData.admin.menuBar;
   
   return (
     <Sidebar className={sb.sidebar} onClick={handleClick} click={clicked}>

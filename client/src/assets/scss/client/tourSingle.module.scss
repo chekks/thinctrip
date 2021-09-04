@@ -1,90 +1,91 @@
-.container{
-    
+.container {
 }
 
-.header{
-    
+.header {
 }
 
-.info{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    background: #fff;
-    z-index: 4;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 30px 0;
-    line-height: 40px;
-    grid-gap: 70px;
-
-    ul{
-        list-style-type: none;
-
-        li{
-            display: flex;
-            align-items: center;
-        }
-    }
-}
-
-svg{
+.tour {
+  svg {
     margin-right: 10px;
     color: #2cb8af;
+  }
 }
 
-.menuWrapper{
-    background: #f5f5f5;
-}
+.info {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background: #fff;
+  z-index: 4;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 30px 0;
+  line-height: 40px;
+  grid-gap: 70px;
 
-.menu{
-    display: flex;
+  ul {
     list-style-type: none;
-    grid-gap: 30px;
-    height: 60px;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 20px 0;
-    color: #9a9a9a;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 1px;
 
-    li:hover{
-        color: #000;
+    li {
+      display: flex;
+      align-items: center;
     }
+  }
 }
 
-.wrapper{
-    max-width: 1180px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 50px 0;
+.menuWrapper {
+  background: #f5f5f5;
 }
 
-.content{
-    width: 100%;
+.menu {
+  display: flex;
+  list-style-type: none;
+  grid-gap: 30px;
+  height: 60px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 0;
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  li:hover {
+    color: #000;
+  }
+}
+
+.wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 50px 0;
+}
+
+.content {
+  width: 100%;
 }
 
 //Tour Details
-.tourDetails, .itinerary, .gallery, .reviews {
-    position: relative;
-    padding: 40px 0;
+.tourDetails,
+.itinerary,
+.gallery,
+.reviews {
+  position: relative;
+  padding: 40px 0;
 }
-
 
 //Itinerary
 
-.itinerary{
-    ul{
-        width: 50%;
-    }
+.itinerary {
+  ul {
+    width: 50%;
+  }
 }
 
-
 //Gallery
-.gallery{
-    text-align: center;
+.gallery {
+  text-align: center;
 }

@@ -1,0 +1,25 @@
+.text-error {
+  color: $red;
+}
+
+.alert {
+  position: relative;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 8px;
+}
+
+.alert-primary {
+  background: $alertPrimary;
+  color: $alertTextPrimary;
+}
+
+.alert-success {
+  background: $alertSuccess;
+  color: $alertTextSuccess;
+}
+
+.alert-sm {
+  padding: 5px;
+}

@@ -33,7 +33,5 @@ Route::get('/users', 'Api\UsersController@getAdminUsers');
 
 Route::prefix('enquiries')->group(function () {
     Route::post('', 'Api\EnquiriesController@addEnquiries');
-    Route::get('/users', function () {
-        // Matches The "/admin/users" URL
-    });
+    // Route::get('/users', function () { });
 });
