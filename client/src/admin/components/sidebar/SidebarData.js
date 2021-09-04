@@ -97,7 +97,7 @@ export const SidebarData = {
             },
             {
               icon: "FaPlane",
-              label: "Add",
+              label: "Add Tour Package",
               link: "/",
             },
           ]

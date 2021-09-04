@@ -79,6 +79,7 @@
         margin: 0 35px 0 0;
         border-radius: 0 20px 20px 0;
         font-weight: 500;
+        position: relative;
 
         svg {
             margin-right: 15px;
@@ -91,7 +92,18 @@
             transition: .3s all ease;
             border-radius: 0 10px 10px 0;
             border-left: 3px solid #2cb8af;
-            font-weight: 600;
         }
+
+        .hasSubNav svg{
+            margin-right: 0;
+            margin-left: 10px;
+            position: absolute;
+            right: 15px;
+            top: 13px;
+        }
+    }
+
+    .menu {
+        transition: all .5s ease-in-out;
     }
 }
