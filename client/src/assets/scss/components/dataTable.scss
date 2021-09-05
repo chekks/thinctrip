@@ -1,8 +1,8 @@
 @import '../variables.scss';
 
 .table-wrapper {
-    margin: 0 auto;
-    padding: 50px 0;
+    // margin: 0 auto;
+    // padding: 50px 0;
 }
 
 .table-header {
@@ -29,7 +29,7 @@
     position: relative;
 
     thead th{
-        background: $lightBlue;
+        background: $col-violet;
         color: $col-white;
         padding: 15px 25px;
         font-weight: $font-weight-light;
