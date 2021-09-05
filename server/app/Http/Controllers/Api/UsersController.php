@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Usertype;
 use Illuminate\Support\Facades\Hash;
 use Validator;
 
@@ -36,8 +37,12 @@ class UsersController extends Controller
                 if (Hash::check($request->password, $user->password)) {
                     //$request->user()->token()->revoke();
                     $token = $user->createToken('Laravel Password Grant Client')->accessToken;
-                    $response = ['access_token' => $token, 'user' => $request->email];
-                    return response($response, 200);
+                    $user->access_token = $token;
+
+                    $usertype = Usertype::find($user->usertype);
+                    $user->usertype = $usertype->type;
+
+                    return response($user, 200);
                 } else {
                     $response = ["message" => "Username or password is incorrect"];
                     return response($response, 400);

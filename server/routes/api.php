@@ -32,6 +32,12 @@ Route::get('/users', 'Api\UsersController@getAdminUsers');
 // Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
 
 Route::prefix('enquiries')->group(function () {
-    Route::post('', 'Api\EnquiriesController@addEnquiries');
+    Route::post('', 'Api\EnquiriesController@postEnquiries');
+    Route::get('', 'Api\EnquiriesController@getEnquiries');
+    // Route::get('/users', function () { });
+});
+
+Route::prefix('menu')->group(function () {
+    Route::get('/{user_role}', 'Api\MenuController@getMenu');
     // Route::get('/users', function () { });
 });

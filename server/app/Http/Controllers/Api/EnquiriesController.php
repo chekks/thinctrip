@@ -10,7 +10,7 @@ use Validator;
 class EnquiriesController extends Controller
 {
     //
-    public function addEnquiries(Request $request)
+    public function postEnquiries(Request $request)
     {
         $validation = Validator::make($request->all(), [
             'name' => 'required|max:255',
@@ -29,5 +29,11 @@ class EnquiriesController extends Controller
             $response = ["errors" => $validation->errors()];
             return response($response, 400);
         }
+    }
+
+    public function getEnquiries()
+    {
+        $enquiries = Enquiries::get();
+        return response()->json(['data' => $enquiries]);
     }
 }
