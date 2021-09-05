@@ -94,6 +94,19 @@
   background-color: transparent;
 }
 
+.btn-flat {
+  background: #fff;
+  font-size: 14px;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: #343a40;
+    box-shadow: 0 0px 0px 0 #00000029, 0 2px 10px 0 #0000001f;
+    transition: all .3s ease-in-out;
+    border-bottom: 1px solid #472167;
+  }
+}
+
 .btn-lg {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;

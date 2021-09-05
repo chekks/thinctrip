@@ -7,15 +7,16 @@ import TourPackages from './pages/tour/TourPackages';
 import DestinationSingle from './pages/destinations/DestinationSingle';
 
 import AdminHomepage from './admin/components/AdminHomepage'
-import AdminLogin from './admin/AdminLogin'
-import AdminRegister from './admin/AdminRegister'
+import AdminLogin from './admin/AdminLogin';
+import AdminRegister from './admin/AdminRegister';
 import AdminArticles from './admin/AdminArticles';
 import AdminEnquiries from './admin/AdminEnquiries';
 import AdminDashboard from './admin/AdminDashboard';
 import AdminUsers from './admin/AdminUsers';
+import AdminTourPackages from './admin/adminTourPackage/TourPackage';
 
-import TourSingle from './pages/tour/TourSingle'
-import ReviewForm from './component/forms/ReviewForm'
+import TourSingle from './pages/tour/TourSingle';
+import ReviewForm from './component/forms/ReviewForm';
 
 export default class Routes extends Component {
     render() {
@@ -34,6 +35,9 @@ export default class Routes extends Component {
                     <Route exact path="/register" component={AdminRegister}/>
                     <Route exact path="/admin/testimonials" component={AdminArticles}/>
                     <Route exact path="/admin/enquiries" component={AdminEnquiries}/>
+
+                    // Contributor
+                    <Route exact path="/admin/tour-packages" component={AdminTourPackages}/>
                     
                     <Route exact path="/tour/north-to-south-15d-14n" component={TourSingle}/>
                     <Route exact path="/tour/north-to-south-15d-14n/review" component={ReviewForm}/>

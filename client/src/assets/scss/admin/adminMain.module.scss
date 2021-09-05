@@ -5,8 +5,9 @@
 
     .wrapper {
         width: 100%;
-        margin-left: 280px;
-        margin-right: 50px;
+        margin-left: 265px;
+        margin-right: 100px;
+        height: 100vh;
 
         @media screen and (max-width: 960px) {
             margin-left: 0;

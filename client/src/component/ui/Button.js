@@ -12,7 +12,7 @@ const checkType = (type) => {
 } 
 
 const checkVariant = (variant) => {
-	let variants = ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark", "link", "blue"];
+	let variants = ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark", "link", "blue", "flat"];
 	return ValueChecker.validateValue(variant) != "" && variants.includes(variant) ? ` btn-${variant}` : "";
 } 
 

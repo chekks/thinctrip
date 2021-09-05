@@ -13,22 +13,31 @@ const SidebarLabel = styled.span`
 `;
 
 const DropdownLink = styled(Link)`
-	background: #494E53;
-	height: 60px;
-	padding-left: 3rem;
+	padding: 10px 15px 10px 35px;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	color: #fff;
-	font-size: 18px;
+	color: #403F38;
+	font-size: 14px;
+	transition: all .5s ease-in-out;
+	margin-left: 30px;
 `;
 
-const SubNav = styled.ul `
-	transform: ${props => props.transform ? 'translate(0px, 0)' : 'translate(-280px, 0)'};
-	transition: transform .3s ease-in-out,transform .3s ease-in-out;
+const SubNav = styled.nav `
+	opacity: ${props => props.transform ? '1' : '0'};
+	transition: max-height 0.25s ease-in;
+	background: #F5F8F9;
+	max-height: ${props => props.transform ? '100%' : '0'};
 `;
 
-
+const Arrow = styled.div `
+	svg {
+		position: absolute;
+		right: 0;
+		top: ${props => props.transform ? '17px' : '13px'};
+		transform: ${props => props.transform ? 'rotateX(180deg)' : 'rotateX(0deg)'};
+	}
+`;
 
 const SubMenu = ({item}) => {
     const [subnav, setSubnav] = useState(false);
@@ -43,43 +52,24 @@ const SubMenu = ({item}) => {
 		setSubnav(!subnav);
 	}
 
-	useEffect (() => {
-		if(item.subMenu.length > 0){
-			if(subnav){
-				setHasSubNav(<FaSortUp />);
-			}else{
-				setHasSubNav(<FaSortDown />);
-			}
-		}
-	}, [subnav]);
-
-
-	
-
     return (
         <>
-			<li onClick={item.subMenu && showSubnav}>
-				<Link className={sb.navLinks} to={item.link}>
-					<AdminBoxIcon icon={item.icon}/>
-					<SidebarLabel>{item.label}</SidebarLabel>
+			<Link className={sb.navLinks} to={item.link} onClick={item.subMenu && showSubnav}>
+				<AdminBoxIcon icon={item.icon}/>
+				<SidebarLabel>{item.label}</SidebarLabel>
 
-					
-					{hasSubNav}
-				</Link>
+				<Arrow transform={subnav}>{hasSubNav}</Arrow>
+			</Link>
 
-				<SubNav transform={subnav} onClick={updateSetSubnav}>
-					{subnav && item.subMenu.map((item, index) => {
-						return (
-							<DropdownLink key={index}>
-								<AdminBoxIcon icon={item.icon}/>
-								<SidebarLabel>{item.label}</SidebarLabel>
-							</DropdownLink>
-						)
-					})}
-				</SubNav>
-			</li>
-
-			
+			<SubNav transform={subnav}>
+				{subnav && item.subMenu.map((item, index) => {
+					return (
+						<DropdownLink key={index} to={item.link}>
+							{item.label}
+						</DropdownLink>
+					)
+				})}
+			</SubNav>
         </>
     )
 }

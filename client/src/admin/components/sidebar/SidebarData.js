@@ -30,7 +30,7 @@ export const SidebarData = {
           },
           {
             icon: "FaFileInvoiceDollar",
-            label: "RFQ",
+            label: "Quotes",
             link: "/",
             subNav : []
           },
@@ -47,12 +47,6 @@ export const SidebarData = {
             subNav : []
           },
           {
-            icon: "FaComments",
-            label: "Enquiries",
-            link: "/",
-            subNav : []
-          },
-          {
             icon: "FaFolderOpen",
             label: "Resources",
             link: "/",
@@ -61,12 +55,6 @@ export const SidebarData = {
           {
             icon: "FaRegCalendarAlt",
             label: "Trip Reminders",
-            link: "/",
-            subNav : []
-          },
-          {
-            icon: "FaRegAddressBook",
-            label: "Customer Details",
             link: "/",
             subNav : []
           },
@@ -87,17 +75,33 @@ export const SidebarData = {
           subMenu : []
         },
         {
+          icon: "FaIdCard",
+          label: "Profile",
+          link: "/profile",
+          subMenu : []
+        },
+        {
           icon: "FaMapMarkedAlt",
-          label: "Tour",
+          label: "Tour Package",
           subMenu : [
             {
-              icon: "FaPlane",
-              label: "All",
+              label: "All Package",
+              link: "/admin/tour-packages",
+            },
+            {
+              label: "Add New",
+              link: "/tour-new",
+            },
+            {
+              label: "Tour Category",
+              link: "/tour-category",
+            },
+            {
+              label: "Tour Tags",
               link: "/",
             },
             {
-              icon: "FaPlane",
-              label: "Add",
+              label: "Activity",
               link: "/",
             },
           ]
