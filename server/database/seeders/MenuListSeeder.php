@@ -79,6 +79,7 @@ class MenuListSeeder extends Seeder
             'is_deleted' => 0,
         ]);
 
+        //10
         MenuList::create([
             'icon' => "FaPlane",
             'label' => 'Tour Package',
@@ -145,6 +146,7 @@ class MenuListSeeder extends Seeder
             'is_deleted' => 0,
         ]);
 
+        //19
         MenuList::create([
             'icon' => "FaCloudUploadAlt",
             'label' => 'Upload',
@@ -152,6 +154,7 @@ class MenuListSeeder extends Seeder
             'is_deleted' => 0,
         ]);
 
+        //20
         MenuList::create([
             'icon' => "FaIdCard",
             'label' => 'Profile',
@@ -199,6 +202,53 @@ class MenuListSeeder extends Seeder
         MenuList::create([
             'icon' => "FaCommentAlt",
             'label' => 'Messages',
+            'link' => "/",
+            'is_deleted' => 0,
+        ]);
+
+        //27
+        MenuList::create([
+            'icon' => "",
+            'label' => 'All Package',
+            'link' => "/tour-packages",
+            'is_deleted' => 0,
+        ]);
+
+        //28
+        MenuList::create([
+            'icon' => "",
+            'label' => 'Add New',
+            'link' => "/tour-new",
+            'is_deleted' => 0,
+        ]);
+
+        //29
+        MenuList::create([
+            'icon' => "",
+            'label' => 'Tour Category',
+            'link' => "/tour-category",
+            'is_deleted' => 0,
+        ]);
+
+        //30
+        MenuList::create([
+            'icon' => "",
+            'label' => 'Tour Tags',
+            'link' => "/",
+            'is_deleted' => 0,
+        ]);
+
+        //31
+        MenuList::create([
+            'icon' => "",
+            'label' => 'Activity',
+            'link' => "/",
+            'is_deleted' => 0,
+        ]);
+
+        MenuList::create([
+            'icon' => "FaMapMarkerAlt",
+            'label' => 'Trips',
             'link' => "/",
             'is_deleted' => 0,
         ]);

@@ -18,7 +18,7 @@ class CreateMenuTable extends Migration
             $table->integer('menu_list_id')->default(0);
             $table->integer('order')->default(0);
             $table->integer('parentMenu')->default(0);
-            $table->integer('usertype_id')->default(0);
+            $table->integer('user_role_id')->default(0);
             $table->integer('is_deleted')->default(0);
             $table->timestamps();
         });

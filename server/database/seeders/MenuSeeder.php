@@ -146,6 +146,7 @@ class MenuSeeder extends Seeder
 
         //CONTRIBUTOR
 
+        //dashboard
         Menu::create([
             'menu_list_id' => 1,
             'order' => 1,
@@ -154,24 +155,71 @@ class MenuSeeder extends Seeder
             'is_deleted' => 0
         ]);
 
+        //profile
         Menu::create([
-            'menu_list_id' => 7,
+            'menu_list_id' => 20,
             'order' => 2,
             'parentMenu' => 0,
             'usertype_id' => 2,
             'is_deleted' => 0
         ]);
 
+        //tour package
+        // id 19
         Menu::create([
-            'menu_list_id' => 2,
+            'menu_list_id' => 10,
             'order' => 3,
             'parentMenu' => 0,
             'usertype_id' => 2,
             'is_deleted' => 0
         ]);
 
+        //start of tour package sub menu
         Menu::create([
-            'menu_list_id' => 17,
+            'menu_list_id' => 27,
+            'order' => 1,
+            'parentMenu' => 19,
+            'usertype_id' => 2,
+            'is_deleted' => 0
+        ]);
+
+        Menu::create([
+            'menu_list_id' => 28,
+            'order' => 2,
+            'parentMenu' => 19,
+            'usertype_id' => 2,
+            'is_deleted' => 0
+        ]);
+
+        Menu::create([
+            'menu_list_id' => 29,
+            'order' => 3,
+            'parentMenu' => 19,
+            'usertype_id' => 2,
+            'is_deleted' => 0
+        ]);
+
+        Menu::create([
+            'menu_list_id' => 30,
+            'order' => 4,
+            'parentMenu' => 19,
+            'usertype_id' => 2,
+            'is_deleted' => 0
+        ]);
+
+        Menu::create([
+            'menu_list_id' => 31,
+            'order' => 5,
+            'parentMenu' => 19,
+            'usertype_id' => 2,
+            'is_deleted' => 0
+        ]);
+
+
+
+        //trips
+        Menu::create([
+            'menu_list_id' => 32,
             'order' => 4,
             'parentMenu' => 0,
             'usertype_id' => 2,
@@ -179,8 +227,25 @@ class MenuSeeder extends Seeder
         ]);
 
         Menu::create([
-            'menu_list_id' => 18,
+            'menu_list_id' => 2,
             'order' => 5,
+            'parentMenu' => 0,
+            'usertype_id' => 2,
+            'is_deleted' => 0
+        ]);
+
+        Menu::create([
+            'menu_list_id' => 17,
+            'order' => 6,
+            'parentMenu' => 0,
+            'usertype_id' => 2,
+            'is_deleted' => 0
+        ]);
+
+
+        Menu::create([
+            'menu_list_id' => 18,
+            'order' => 7,
             'parentMenu' => 0,
             'usertype_id' => 2,
             'is_deleted' => 0

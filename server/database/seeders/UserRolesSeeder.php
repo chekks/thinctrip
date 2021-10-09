@@ -16,7 +16,7 @@ class UserRolesSeeder extends Seeder
     {
         UserRoles::create([
             'key' => 'admin',
-            'label' => 'Admin',
+            'label' => 'User',
             'is_deleted' => 0
         ]);
 

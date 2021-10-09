@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::prefix('admin/users')->group(function () {
+// Route::prefix('user/users')->group(function () {
 //     Route::post('/register', 'Api\UsersController@register');
 //     Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
 // });
@@ -27,7 +27,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/register', 'Api\UsersController@register');
 Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
-Route::get('/users', 'Api\UsersController@getAdminUsers');
+Route::get('/users', 'Api\UsersController@getUserUsers');
 // Route::post('/register', 'Api\UsersController@register');
 // Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
 
@@ -38,6 +38,6 @@ Route::prefix('enquiries')->group(function () {
 });
 
 Route::prefix('menu')->group(function () {
-    Route::get('/{user_role}', 'Api\MenuController@getMenu');
+    Route::get('', 'Api\MenuController@getMenu');
     // Route::get('/users', function () { });
 });

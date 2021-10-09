@@ -1,17 +1,17 @@
 import React from 'react';
 import ValueChecker from '../../helpers/ValueChecker';
 import moment from 'moment';
-import {FaEdit, FaTrashAlt, FaNewspaper} from "react-icons/fa";
+import { FaEdit, FaTrashAlt, FaNewspaper } from "react-icons/fa";
 import DataTableRow from './DataTableRow';
 import DataTableCell from './DataTableCell';
 
 const formatHeader = (headers) => {
-    
-    if(ValueChecker.validateValue(headers) != "" && headers.length > 0){
-        return headers.map((header) =>{
+
+    if (ValueChecker.validateValue(headers) != "" && headers.length > 0) {
+        return headers.map((header) => {
             return <th>{header}</th>
         });
-    }else{
+    } else {
         return "";
     }
 }
@@ -21,28 +21,28 @@ const formatTableCell = (datacell, props) => {
     let size = Object.keys(datacell).length;
     let ctr = 0;
     for (var key in datacell) {
-        
+
         // if(datacell[key] == "Actions"){
         //     
         // }
         // else{
         //     data.push(<DataTableCell>{datacell[key]}</DataTableCell>);
         // }
-        if(props.columns.enabled.includes(key)){
+        if (props.columns.enabled.includes(key)) {
             data.push(<DataTableCell>{datacell[key]}</DataTableCell>);
         }
 
-        if (props.columns.enabled.includes("actions") && size-1 == ctr) {
+        if (props.columns.enabled.includes("actions") && size - 1 == ctr) {
             let push_data = <React.Fragment>
-                <div className="adminEditBtn"><FaEdit />Edit</div>
-                 <div className="adminDeleteBtn"><FaTrashAlt />Delete</div>
-             </React.Fragment>
+                <div className="userEditBtn"><FaEdit />Edit</div>
+                <div className="userDeleteBtn"><FaTrashAlt />Delete</div>
+            </React.Fragment>
             data.push(push_data);
         }
 
         ctr++;
-        
-    }  
+
+    }
     return data;
 }
 
@@ -57,7 +57,7 @@ const DataTable = (props) => {
                 </thead>
                 <tbody>
                     {props.data.map((column) => {
-                        
+
                         return <DataTableRow>
                             {formatTableCell(column, props)}
                         </DataTableRow>
