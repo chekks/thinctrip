@@ -107,12 +107,6 @@ export const SidebarData = {
           ]
         },
         {
-          icon: "FaPlane",
-          label: "Trips",
-          link: "/",
-          subMenu : []
-        },
-        {
           icon: "FaComments",
           label: "Enquiries",
           link: "/",
@@ -126,7 +120,7 @@ export const SidebarData = {
         },
         {
           icon: "FaRegCalendarAlt",
-          label: "Calendar",
+          label: "Bookings",
           link: "/",
           subMenu : []
         },

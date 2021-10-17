@@ -9,6 +9,11 @@ const checkSize = (size) =>{
 const checkType = (type) => {
 	let types = ["text", "date", "email", "number", "password"];
 	return ValueChecker.validateValue(types) != "" && types.includes(type) ? type: "text";
+}
+
+const checkWidth = (width) => {
+	let widths = ["50", "100", "30"];
+	return ValueChecker.validateValue(widths) != "" && widths.includes(width) ? width: "text";
 } 
 
 // const handleChange = (event, props) =>{
@@ -22,12 +27,14 @@ const TextField = (props) => {
 	let size = checkSize(props.size);
 	let type = checkType(props.type);
 	let round = props.round == true ? ` input-round`: "";
+	let width = checkWidth(props.width);
 
 	return (
 		<React.Fragment>
-			<input 
+			<input
+				readOnly={props.readOnly}
 				type={type} 
-				className={`form-control${size}${round}${' ' + props.className}` } 
+				className={`form-control${size}${round}${' ' + props.className} w-${width}`} 
 				placeholder={props.placeholder}
 				{ ...( props.name && { name:props.name } )}
 				{ ...( props.id && { id:props.id } )}
@@ -46,6 +53,7 @@ TextField.defaultProps = {
 	name: "",
 	id: "",
 	round: false,
+	readOnly: "",
 	onChange: () => {}
 }
 

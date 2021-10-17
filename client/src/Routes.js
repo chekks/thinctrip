@@ -13,10 +13,11 @@ import UserArticles from './user/UserArticles';
 import UserEnquiries from './user/UserEnquiries';
 import UserDashboard from './user/UserDashboard';
 import UserUsers from './user/UserUsers';
-import UserTourPackages from './user/userTourPackage/TourPackage';
 
 // Contributor
 import ContributorRegister from './user/contributor/ContributorRegister';
+import ContributorTourPackages from './user/contributor/package/Index';
+import ContributorSubmittedTours from './user/contributor/SubmittedTours';
 
 import TourSingle from './pages/tour/TourSingle';
 import ReviewForm from './component/forms/ReviewForm';
@@ -41,7 +42,8 @@ export default class Routes extends Component {
 
                     {/* Contributor */}
                     <Route exact path="/register-contributor" component={ContributorRegister} />
-                    <Route exact path="/user/tour-packages" component={UserTourPackages} />
+                    <Route exact path="/contributor/create-your-tour" component={ContributorTourPackages} />
+                    <Route exact path="/contributor/submitted-tours" component={ContributorSubmittedTours} />
 
                     <Route exact path="/tour/north-to-south-15d-14n" component={TourSingle} />
                     <Route exact path="/tour/north-to-south-15d-14n/review" component={ReviewForm} />

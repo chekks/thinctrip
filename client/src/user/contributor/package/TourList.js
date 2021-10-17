@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { FaNewspaper } from "react-icons/fa";
-import Button from '../../component/ui/Button';
-import tp from '../../assets/scss/user/userTour.module.scss';
+import Button from '../../../component/ui/Button';
+import tp from '../../../assets/scss/user/userTour.module.scss';
 
-import DataTable from '../../component/ui/DataTable'
-import UserHeader from '../components/UserHeader'
+import DataTable from '../../../component/ui/DataTable'
+import UserHeader from '../../components/UserHeader'
 
 import { FaPlus, FaFileCsv } from 'react-icons/fa'
 

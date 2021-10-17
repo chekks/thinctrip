@@ -11,11 +11,6 @@ import UserWidgets from '../component/widgets/UserWidgets'
 export default function UserDashboard() {
     return (
         <React.Fragment>
-            <UserHeader
-                name="Hello, Vendor!"
-                description="All details about your selling Tour Packages are here..."
-            />
-
             <div className={d.container}>
                 <div className={d.analytics}>
                     <UserWidgets
