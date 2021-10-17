@@ -5,9 +5,9 @@
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-  width: 60%;
   height: 100vh;
   background-position: 50%;
+  width: 40%;
 
   &:after {
     content: "";
@@ -25,17 +25,43 @@
   display: block;
   margin: 0 auto;
   width: 200px;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 .rightContainer {
   padding: 40px;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 60%;
 }
+
+// STEPPER
+.step{
+    display: flex;
+    color: $lightBlack;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba($grey, 0.5);
+    
+
+    &Wrapper{
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+    }
+
+    &BoxNumber{
+        background-color: $dirtyWhite;
+        color: $white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+}
+
+
+
+// END OF STEPPER
 
 .form {
   margin-top: 50px;
@@ -80,11 +106,20 @@
   justify-content: center;
   flex-direction: column;
 
+  .googleButton {
+    background: #dd4b39;
+    border: 1px solid #dd4b39;
+  }
+
+  .facebookButton {
+    background: #3b5998;
+    border: 1px solid #3b5998;
+  }
+
   button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
 
     svg {
       margin-right: 15px;
@@ -122,7 +157,7 @@
 }
 
 .btn_login_social_media {
-  width: 400px;
+  width: 300px;
 }
 
 @media only screen and (max-width: 768px) {

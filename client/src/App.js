@@ -28,7 +28,7 @@ class App extends Component {
       publicPage = false;
     }
 
-    if (pathArray[1] == 'login' || pathArray[1] == 'register') {
+    if (pathArray[1] == 'login' || pathArray[1].includes('register')) {
       content = <Routes></Routes>
       //require('bootstrap/dist/css/bootstrap.min.css'); 
       console.log("App 1");
