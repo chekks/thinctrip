@@ -1,0 +1,26 @@
+.accordion {
+    &_header {
+        height: 50px;
+        padding: 10px 20px;
+        background: #bdbdbd61;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    &_body {
+        padding: 20px;
+        border: 1px solid #0000000d;
+    }
+}
+
+.toggle_close {
+    height: 0px;
+    display: none;
+}

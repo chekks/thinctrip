@@ -5,7 +5,9 @@ import {
     POST_USERS_REGISTER_SUCCESS,
     POST_USERS_REGISTER_FAILURE,
     GET_USERS_SUCCESS,
-    BASE_URL
+    BASE_URL,
+    GET_COUNTRIES_SUCCESS,
+    GET_COUNTRIES_FAILURE
 
 } from '../constants.js'
 
@@ -41,6 +43,14 @@ const getUsersSuccess = users => {
     return {
         type: GET_USERS_SUCCESS,
         user_users: users
+    }
+}
+
+const getCountriesSuccess = countries => {
+    console.log("here in side get ZCoukalsd");
+    return {
+        type: GET_COUNTRIES_SUCCESS,
+        countries: countries
     }
 }
 
@@ -101,6 +111,27 @@ export const postUsersLogin = (payload) => {
                 console.log("error", error);
                 const errorMsg = error.response.data;
                 dispatch(postUsersLoginFailure(errorMsg));
+            })
+    }
+}
+
+export const getCountries = (payload) => {
+    return async (dispatch) => {
+        await axios.get(`${BASE_URL}/api/users/country`, payload, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => {
+                console.log("countryies res.data", res.data.countries);
+                dispatch(getCountriesSuccess(res.data.countries));
+
+            })
+            .catch(error => {
+                //error.message is the error description
+                console.log("error get users", error);
+                // const errorMsg = error.response.data;
+                // dispatch(postUsersRegistrationFailure(errorMsg));
             })
     }
 }

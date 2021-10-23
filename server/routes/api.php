@@ -27,9 +27,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/register', 'Api\UsersController@register');
 Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
-Route::get('/users', 'Api\UsersController@getUserUsers');
-// Route::post('/register', 'Api\UsersController@register');
-// Route::post('login', ['as' => 'login', 'uses' => 'Api\UsersController@login']);
+//Route::get('/users', 'Api\UsersController@getUserUsers');
+
+Route::prefix('users')->group(function () {
+    Route::get('', 'Api\UsersController@getUserUsers');
+    Route::get('/country', 'Api\UsersController@getCountries');
+    // Route::get('/users', function () { });
+});
 
 Route::prefix('enquiries')->group(function () {
     Route::post('', 'Api\EnquiriesController@postEnquiries');

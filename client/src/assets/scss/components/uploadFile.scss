@@ -1,0 +1,44 @@
+.upload_drop_area {
+    border: 2px dashed #ccc;
+    width: 100%;
+    font-family: sans-serif;
+    padding: 20px;
+    text-align: center;
+}
+.upload_drop_area.highlight {
+border-color: #1d3f99;
+transition: all .3s;
+}
+.upload_drop_area p {
+font-size: 14px;
+}
+.upload_file_button {
+display: inline-block;
+padding: 10px;
+background: #e4e4e4;
+cursor: pointer;
+border-radius: 5px;
+}
+.upload_file_button:hover {
+background: #1d3f99;
+color: #fff;
+transition: all .3s;
+}
+.upload_input_file {
+display: none;
+}
+.upload_allowed_text{
+margin: 10px;
+color: #a4a4a4;
+}
+
+
+.upload_error_message {
+opacity: 0;
+color:  #1d3f99;
+font-weight: bold;
+}
+
+.upload_filename_label{
+margin-left:10px;
+}

@@ -10,6 +10,7 @@ $red: #dd4b39;
 $redHover: #bb3f30;
 $blue: #3b5998;
 $blueHover: #2d4473;
+$purple: #502163;
 
 // ALERTS
 $alertPrimary: #cfe2ff;
@@ -50,6 +51,10 @@ $alertTextDark: #141619;
 
 .w100 {
   width: 100%;
+}
+
+.hide{
+  display: none;
 }
 
 a {
