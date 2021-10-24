@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
+import { FaTimes } from 'react-icons/fa';
 import tp from '../../../assets/scss/user/contributor/contributorPackage.module.scss';
 import CkEditor from '../../../component/ui/CkEditor';
 
 // Component
 import TextField from '../../../component/ui/Inputs/TextField';
 
-const TourDetails = () => {
+const TourDetails = (props) => {
     const [tourTitle, setTourTitle] = useState();
-    const [titleText, settitleText] = useState();
     const [showModal, setShowModal] = useState(true);
+    const [style, setStyle] = useState(false);
 
     const toggleAccordion = () => {
         setShowModal(!showModal);
@@ -17,10 +18,24 @@ const TourDetails = () => {
     const setTitle = (e) => {
         setTourTitle(e.target.value);
     }
+
+    const handleMouseEnter = () => {
+        setStyle(true);
+    }
+    const handleMouseLeave = ()=> {
+        setStyle(false)
+    }
+
+    console.log(props.removeDetail)
+
     return (
         <>
             <div className={tp.details_container}>
-                <div className="accordion">
+                <div className="accordion" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    <div 
+                        className={style ? 'remove_btn' : 'hide'}
+                        onClick={props.removeDetail}
+                    ><FaTimes/></div>
                     <div className="accordion_header" onClick={toggleAccordion}>
                         <h1>{tourTitle}</h1>
                     </div>
@@ -36,7 +51,9 @@ const TourDetails = () => {
                             id="shared_by"
                             onChange={setTitle}
                         />
-                        <CkEditor />
+                        <CkEditor 
+                            description="Insert description here ..."
+                        />
                     </div>
                 </div>
             </div>

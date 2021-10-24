@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-const CkEditor = () => {
+const CkEditor = (props) => {
     return (
         <>
             <CKEditor
                 editor={ClassicEditor}
-                data="<p>Insert description here ...</p>"
+                data={props.description}
                 onReady={editor => {
                     // You can store the "editor" and use when it is needed.
                     console.log('Editor is ready to use!', editor);

@@ -18,35 +18,51 @@ import {
     FaMapMarked,
     FaPlus
 } from "react-icons/fa";
+import TourGallery from './TourGallery';
 
 const Index = () => {
 
     const [tabMenu, setTabMenu] = useState("Info");
-    const [tourDetails, settourDetails] = useState();
-    const [details, setDetails] = useState(['1']);
+    const [tourDetails, setTourDetails] = useState([<TourDetails />]);
+    const [tourItineraries, setTourItineraries] = useState([<TourItinerary />]);
 
     const selectMenu = (id) => {
-        console.log(id);
         let filter = document.getElementsByClassName("tour");
         for (let i = 0; i < filter.length; i++) {
             filter[i].classList.add("hide");
         }
-        console.log("filter", filter);
         let toggleClassHide = document.getElementById(id);
         toggleClassHide.classList.toggle("hide");
 
         setTabMenu(id.charAt(0).toUpperCase() + id.slice(1));
     }
 
-    const addDetails = (i) => {
-        let d = details.concat(['']);
-        console.log("details", d);
-        let e = details.slice(0 + 1);
-        console.log("e", e);
-        setDetails(d);
+    const removeDetails = (detailsId) => {
+        setTourDetails(tourDetails.filter(item => item.key !== detailsId));
+        console.log("remove", tourDetails.filter(item => item.key !== detailsId));
     }
 
-    console.log("tourDetails", tourDetails);
+    const addDetails = () => {
+        let detailsId = "details_" + tourDetails.length;
+        setTourDetails(tourDetails.concat(
+            <TourDetails
+                key={detailsId}
+                id={detailsId}
+                removeDetail={removeDetails(detailsId)}
+            />
+        ));    
+    }
+
+    const addItineraries = () => {
+        let itineraryId = "itinerary_" + tourItineraries.length;
+        setTourItineraries(tourItineraries.concat(
+            <TourItinerary
+                key={itineraryId}
+                id={itineraryId}
+                // removeItinerary={removeItineraries(itineraryId)}
+            />
+        )); 
+    }
 
     return (
         <>
@@ -73,29 +89,29 @@ const Index = () => {
                             <div className={tp.tour_wrapper}>
                                 <div className={tp.tour_header}>
                                     <h3>Tour {tabMenu}</h3>
-                                    <div onClick={addDetails}>{tabMenu == "Info" ? "" : <FaPlus />}</div>
+                                    <div onClick={tabMenu == "details" ? addDetails : addItineraries}>
+                                        {tabMenu == "Info" || tabMenu == "Gallery" || tabMenu == "Map" ? "" : <FaPlus />}
+                                    </div>
                                 </div>
 
                                 <div id="info" className="tour">
-                                    <TourInfo
-                                    // id={id}
-                                    // key={id}
-
-                                    />
+                                    <TourInfo />
                                 </div>
 
                                 <div id="details" className="hide tour">
-                                    {details.map((details) =>
+                                    {tourDetails.map(() =>
                                         <TourDetails />
                                     )}
                                 </div>
 
                                 <div id="itinerary" className="hide tour">
-                                    <TourItinerary />
+                                    {tourItineraries.map(() =>
+                                        <TourItinerary />
+                                    )}
                                 </div>
 
                                 <div id="gallery" className="hide tour">
-                                    <h1>GALLERY</h1>
+                                    <TourGallery />
                                 </div>
 
                                 <div id="map" className="hide tour">
