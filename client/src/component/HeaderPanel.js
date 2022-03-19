@@ -50,7 +50,6 @@ const HeaderPanel = (props) => {
         //window.addEventListener("button", showButton);
         window.addEventListener("scroll", onScroll);
         return () => {
-
         }
     }, [])
 
