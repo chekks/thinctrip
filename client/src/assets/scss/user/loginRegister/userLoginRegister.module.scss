@@ -1,0 +1,141 @@
+@import "../user.scss";
+
+.leftContainer{
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background-position: 50%;
+  width: 70%;
+
+  &:after {
+    content: "";
+    background: rgba(28, 40, 58, 0.2);
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    transition: all 0.5s ease;
+  }
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  margin-top: 30px;
+}
+
+.rightContainer {
+  padding: 40px;
+  width: 40%;
+}
+
+.form {
+  margin-top: 50px;
+}
+
+.copyright {
+  margin-top: 50px;
+  text-align: center;
+  color: $grey;
+}
+
+.loginButton {
+  background: $lightBlue;
+  border-color: $lightBlue;
+}
+
+.lineContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .hr {
+    border: 1px solid $dirtyWhite;
+    margin-top: 40px;
+    font-size: 16px;
+    width: 200px;
+  }
+
+  .or {
+    position: absolute;
+    top: 30px;
+    background: #fff;
+    padding: 0px 10px;
+  }
+}
+
+.socialMediaContainer {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .googleButton {
+    background: #dd4b39;
+    border: 1px solid #dd4b39;
+  }
+
+  .facebookButton {
+    background: #3b5998;
+    border: 1px solid #3b5998;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 15px;
+    }
+  }
+}
+
+.lineContainerSignUp {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .hr {
+    border: 1px solid $dirtyWhite;
+    margin-top: 40px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .or {
+    position: absolute;
+    top: 30px;
+    background: #fff;
+    padding: 0px 10px;
+  }
+}
+
+.signUpContainer {
+  text-align: center;
+
+  p:first-child {
+    margin-top: 20px;
+  }
+}
+
+.btn_login_social_media {
+  width: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+  .leftContainer {
+    display: none;
+  }
+
+  .rightContainer {
+    width: 100%;
+  }
+}

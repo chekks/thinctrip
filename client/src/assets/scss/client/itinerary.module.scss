@@ -1,0 +1,104 @@
+.wrapper {
+    position: relative;
+}
+
+.item{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    align-items: baseline;
+    position: relative;
+    margin-bottom: 15px;
+    transition: 250ms;
+    //overflow: hidden;
+
+    &:first-child, &:last-child{
+        span{
+            background: #fff;
+        }
+    }
+
+    &:last-child{
+        .itineraryTrail{
+            background-image: none;
+        }
+    }
+}
+
+.trail{
+    background-image: url(https://static.tacdn.com/img2/attractions/apd/dotted-line.svg);
+    background-repeat: repeat;
+    background-position: 60%;
+    z-index: 1;
+    height: 100%;
+    position: absolute;
+    left:0;
+    margin-left: 10px;
+
+    span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 38px;
+        width: 38px;
+        border-radius: 50%;
+        font-size: 14px;
+        border: 1px solid #333;
+        background: #202020;
+        color: #fff;
+        cursor: pointer;
+        
+        svg{
+            color: #333;
+        }
+    }
+
+    
+}
+
+.details{
+    width: 88%;
+    left: 0;
+    position: relative;
+
+    h4{
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    p{
+        font-size: 14px;
+        transition: 250ms;
+        margin-bottom: 5px;
+    }
+
+    .seeMore{
+        font-size: 13px;
+        border-bottom: 1px solid #2cb8af;
+        color: #8c8c8c;
+        font-weight: 200;
+        cursor: pointer;
+    }
+
+    img{
+        object-fit: cover;
+        width: 100%;
+        max-width: 300px;
+        height: 150px;
+    }
+}
+
+.map{
+    position: absolute;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12), 0 -1px 2px 0 rgba(0, 0, 0, 0.08);
+    border: 1px solid #0000001c;
+    border-radius: 25px;
+    right: 0;
+
+    div:nth-child(1){
+        border-radius: 25px;
+    }
+}

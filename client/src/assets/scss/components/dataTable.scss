@@ -1,0 +1,43 @@
+@import '../variables.scss';
+
+.table-wrapper {
+    // margin: 0 auto;
+    // padding: 50px 0;
+}
+
+.table-header {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: $darkBlue;
+    font-weight: $font-weight-bold;
+}
+
+.table-striped tbody tr:nth-of-type(odd){
+    background-color: #f9f9f9 !important;
+}
+
+.table {
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0,0.12);
+    border-collapse: collapse;
+    background: $col-white;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    thead th{
+        background: $col-violet;
+        color: $col-white;
+        padding: 15px 25px;
+        font-weight: $font-weight-light;
+        text-align: left;
+    }
+
+    tbody tr td {
+        padding: 13px 25px;
+        font-size: $font-rg;
+    }
+}

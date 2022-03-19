@@ -1,0 +1,47 @@
+.accordion {
+    position: relative;
+
+    &_header {
+        height: 50px;
+        padding: 10px 20px;
+        background: #bdbdbd61;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    &_body {
+        padding: 20px;
+        border: 1px solid #0000000d;
+    }
+}
+
+.toggle_close {
+    height: 0px;
+    display: none;
+}
+
+.remove_btn {
+    background: #f4f7f8;
+    width: 23px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 15px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    transition: all .3s ease-in-out;
+    box-shadow: 0 0px 0px 0 black, 0 3px 10px 0 #00000059;
+
+    svg {
+        font-size: 12px;
+        color: #ff000073;
+    }
+}

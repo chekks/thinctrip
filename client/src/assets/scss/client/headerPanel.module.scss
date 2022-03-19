@@ -1,0 +1,57 @@
+.pageContainer{
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+    height: 40vh;
+}
+
+.sidePanel {
+    z-index: 8;
+    position: absolute;
+    right: 0;
+    top: -65px;
+    width: 350px;
+}
+
+.priceRibbon{
+    background: #24073d;
+    height: 35px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+// PREVIEW MODE
+
+.headerContainer{
+    display: flex;
+
+    .cr_header_title{
+        background: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        width: 100vh;
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    
+
+    .editPen {
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        padding: 6px;
+        margin-top: -5px;
+        margin-left: 5px;
+
+        svg{
+            color: #fff;
+        }
+    }
+    
+}

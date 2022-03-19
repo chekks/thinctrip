@@ -1,0 +1,31 @@
+@mixin flex {
+    display: flex;
+}
+
+.flex-center {
+    @include flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-left {
+    @include flex;
+
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-right {
+    @include flex;
+
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-start {
+    @include flex;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+}

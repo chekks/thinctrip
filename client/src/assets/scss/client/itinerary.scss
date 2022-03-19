@@ -1,0 +1,41 @@
+.itinerary_li_con:hover{
+    background: #00000005;
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+
+    .itinerary_up_down_con{
+        display: initial;
+    }
+
+    
+
+}
+
+.itinerary_up_down_con{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    z-index: 99;
+
+    .itinerary_up_con, .itinerary_down_con{
+        border: 1px solid #2cb8af;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+
+        &--foreground{
+            z-index: 99;
+            width: inherit;
+            height: inherit;
+            position: absolute;
+        }
+
+        svg{
+            margin: 5px;
+            font-size: 12px;
+        }
+        margin-bottom: 5px;
+    }
+}
+
